@@ -22,18 +22,19 @@ btnChckE1.addEventListener("click", () => {
         score--;
         scoreE1.textContent = score;
         displayMessage(guess > secretNum ? "Too High" : "Too Low");
+        animateFeedback("incorrect");
       } else {
         displayMessage("You lost");
-        containerE1.style.backgroundColor = "#fff";
+        containerE1.style.backgroundColor = "#e63946";
         scoreE1.textContent = 0;
       }
     } else {
-      // success
       hideNumE1.textContent = secretNum;
       hideNumE1.style.width = "50%";
       hideNumE1.style.transition = "all 0.5s ease-in";
-      containerE1.style.backgroundColor = "#e0d8d3";
+      containerE1.style.backgroundColor = "#00A905";
       displayMessage("Congratulations!! You Won");
+      animateFeedback("correct");
 
       if (score > highScore) {
         highScore = score;
@@ -45,12 +46,10 @@ btnChckE1.addEventListener("click", () => {
   }
 });
 
-// Display message function
 const displayMessage = function (message) {
   msgE1.textContent = message;
 };
 
-// Reset game
 btnPlayE1.addEventListener("click", () => {
   score = 20;
   secretNum = Math.trunc(Math.random() * 20 + 1);
@@ -60,6 +59,18 @@ btnPlayE1.addEventListener("click", () => {
   hideNumE1.style.width = "25%";
   hideNumE1.style.transition = "all 0.5s ease-in";
   inputNumE1.value = "";
-  containerE1.style.backgroundColor = "#ddd";
+  containerE1.style.backgroundColor = "#ffffff";
   displayMessage("Start guessing...");
 });
+
+const animateFeedback = function (result) {
+  if (result === "correct") {
+    containerE1.style.animation = "correctAnimation 0.5s ease-in-out";
+  } else if (result === "incorrect") {
+    containerE1.style.animation = "incorrectAnimation 0.5s ease-in-out";
+  }
+
+  setTimeout(() => {
+    containerE1.style.animation = "";
+  }, 500);
+};
