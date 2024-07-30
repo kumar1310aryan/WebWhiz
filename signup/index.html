@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+      .signup-form {
+        background: white;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+      input.valid {
+        border-color: green;
+      }
+      input.invalid {
+        border-color: red;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-form">
+      <h2 align="center">Sign Up</h2>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" required />
+      </div>
+      <button type="submit" id="signup-btn">Sign Up</button>
+    </div>
+
+    <script>
+      const signupbtn = document.getElementById("signup-btn");
+      signupbtn.addEventListener("click", function () {
+        //password and confirm password
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        const confirmPasswordInput =
+          document.getElementById("confirm-password");
+        const passwordInput = document.getElementById("password");
+        const errorMessage = document.getElementById("error-message");
+
+        if (password !== confirmPassword) {
+          passwordInput.classList.remove("invalid");
+          passwordInput.classList.add("valid");
+          confirmPasswordInput.classList.add("invalid");
+          confirmPasswordInput.classList.remove("valid");
+        } else if (password === "" && confirmPassword === "") {
+          passwordInput.classList.add("invalid");
+          confirmPasswordInput.classList.add("invalid");
+        } else {
+          passwordInput.classList.remove("invalid");
+          passwordInput.classList.add("valid");
+          confirmPasswordInput.classList.remove("invalid");
+          confirmPasswordInput.classList.add("valid");
+        }
+
+        //for email
+
+        const emailInput = document.getElementById("email");
+        const emailValue = emailInput.value;
+
+        if (
+          emailValue.endsWith("@gmail.com") ||
+          (emailValue.includes("@") && emailValue.endsWith(".com")) ||
+          emailValue.endsWith("@yahoo.com")
+        ) {
+          emailInput.classList.remove("invalid");
+          emailInput.classList.add("valid");
+        } else {
+          emailInput.classList.remove("valid");
+          emailInput.classList.add("invalid");
+        }
+
+        //username
+
+        const username = document.getElementById("username");
+        if (username.value !== "") {
+          username.classList.remove("invalid");
+          username.classList.add("valid");
+        } else {
+          username.classList.add("invalid");
+        }
+      });
+    </script>
+  </body>
+</html>
