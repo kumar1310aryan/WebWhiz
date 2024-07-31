@@ -139,6 +139,8 @@
         } else {
           emailInput.classList.remove("green-border");
           emailInput.classList.add("red-border");
+          const emailError = document.getElementById("email-error");
+          emailError.textContent = "Provide correct email";
         }
 
         if(emailValue===""){
