@@ -33,10 +33,10 @@
         border: 2px solid #ccc;
         border-radius: 4px;
       }
-      input.valid {
+      input.green-border {
         border-color: green;
       }
-      input.invalid {
+      input.red-border {
         border-color: red;
       }
       button {
@@ -103,20 +103,20 @@
         const errorMessage = document.getElementById("error-message");
 
         if (password !== confirmPassword) {
-          passwordInput.classList.remove("invalid");
-          passwordInput.classList.add("valid");
-          confirmPasswordInput.classList.add("invalid");
-          confirmPasswordInput.classList.remove("valid");
+          passwordInput.classList.remove("red-border");
+          passwordInput.classList.add("green-border");
+          confirmPasswordInput.classList.add("red-border");
+          confirmPasswordInput.classList.remove("green-border");
           const confirmPasswordError = document.getElementById("confirm-password-error");
           confirmPasswordError.textContent = "Passwords does not match";
         } else if (password === "" && confirmPassword === "") {
-          passwordInput.classList.add("invalid");
-          confirmPasswordInput.classList.add("invalid");
+          passwordInput.classList.add("red-border");
+          confirmPasswordInput.classList.add("red-border");
         } else {
-          passwordInput.classList.remove("invalid");
-          passwordInput.classList.add("valid");
-          confirmPasswordInput.classList.remove("invalid");
-          confirmPasswordInput.classList.add("valid");
+          passwordInput.classList.remove("red-border");
+          passwordInput.classList.add("green-border");
+          confirmPasswordInput.classList.remove("red-border");
+          confirmPasswordInput.classList.add("green-border");
         }
 
         if(password===""){
@@ -134,11 +134,11 @@
           (emailValue.includes("@") && emailValue.endsWith(".com")) ||
           emailValue.endsWith("@yahoo.com")
         ) {
-          emailInput.classList.remove("invalid");
-          emailInput.classList.add("valid");
+          emailInput.classList.remove("red-border");
+          emailInput.classList.add("green-border");
         } else {
-          emailInput.classList.remove("valid");
-          emailInput.classList.add("invalid");
+          emailInput.classList.remove("green-border");
+          emailInput.classList.add("red-border");
         }
 
         if(emailValue===""){
@@ -151,10 +151,10 @@
         const username = document.getElementById("username");
         const usernameError = document.getElementById("username-error");
         if (username.value !== "") {
-          username.classList.remove("invalid");
-          username.classList.add("valid");
+          username.classList.remove("red-border");
+          username.classList.add("green-border");
         } else {
-          username.classList.add("invalid");
+          username.classList.add("red-border");
           usernameError.textContent = "Username is mandatory";
         }
       });
