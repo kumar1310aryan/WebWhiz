@@ -63,7 +63,12 @@
       <h2 align="center">Sign Up</h2>
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter Username" required />
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter Username"
+          required
+        />
         <div id="username-error" class="error"></div>
       </div>
       <div class="form-group">
@@ -73,12 +78,22 @@
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter Password" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          required
+        />
         <div id="password-error" class="error"></div>
       </div>
       <div class="form-group">
         <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" placeholder="Confirm Password" required />
+        <input
+          type="password"
+          id="confirm-password"
+          placeholder="Confirm Password"
+          required
+        />
         <div id="confirm-password-error" class="error"></div>
       </div>
       <button type="submit" id="signup-btn">Sign Up</button>
@@ -87,18 +102,18 @@
     <script>
       const signupbtn = document.getElementById("signup-btn");
       signupbtn.addEventListener("click", function () {
-
-
-        //clearing previous error messages 
-        document.querySelectorAll(".error").forEach(el => el.textContent = "");
-
-
+        //clearing previous error messages
+        document
+          .querySelectorAll(".error")
+          .forEach((el) => (el.textContent = ""));
 
         //password and confirm password
         const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm-password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
 
-        const confirmPasswordInput = document.getElementById("confirm-password");
+        const confirmPasswordInput =
+          document.getElementById("confirm-password");
         const passwordInput = document.getElementById("password");
         const errorMessage = document.getElementById("error-message");
 
@@ -107,7 +122,9 @@
           passwordInput.classList.add("green-border");
           confirmPasswordInput.classList.add("red-border");
           confirmPasswordInput.classList.remove("green-border");
-          const confirmPasswordError = document.getElementById("confirm-password-error");
+          const confirmPasswordError = document.getElementById(
+            "confirm-password-error"
+          );
           confirmPasswordError.textContent = "Passwords does not match";
         } else if (password === "" && confirmPassword === "") {
           passwordInput.classList.add("red-border");
@@ -119,7 +136,9 @@
           confirmPasswordInput.classList.add("green-border");
         }
 
-        if(password===""){
+        if (password === "") {
+          passwordInput.classList.remove("green-border");
+          passwordInput.classList.add("red-border");
           const passwordError = document.getElementById("password-error");
           passwordError.textContent = "Password is mandatory";
         }
@@ -143,7 +162,7 @@
           emailError.textContent = "Provide correct email";
         }
 
-        if(emailValue===""){
+        if (emailValue === "") {
           const emailError = document.getElementById("email-error");
           emailError.textContent = "Email is mandatory";
         }
