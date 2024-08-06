@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do's</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        #taskInput {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #100f0f;
+            border-radius: 40px;
+            margin-right: 10px;
+        }
+        #addButton {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #addButton:hover {
+            background-color: #2980b9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            background-color: #fff;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .deleteButton, .editButton {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .deleteButton {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .deleteButton:hover {
+            background-color: #c0392b;
+        }
+        .editButton {
+            background-color: #f39c12;
+            color: white;
+        }
+        .editButton:hover {
+            background-color: #e67e22;
+        }
+        .statusCheckbox {
+            width: 20px; /* Fixed width for checkbox */
+            height: 20px; /* Fixed height for checkbox */
+        }
+        /* Set fixed widths for table columns */
+        th:nth-child(1), td:nth-child(1) {
+            width: 50px; /* Checkbox column */
+        }
+        th:nth-child(2), td:nth-child(2) {
+            width: 100px; /* Date column */
+        }
+        th:nth-child(3), td:nth-child(3) {
+            width: 300px; /* Task column */
+        }
+        th:nth-child(4), td:nth-child(4) {
+            width: 100px; /* Status column */
+        }
+        th:nth-child(5), td:nth-child(5) {
+            width: 150px; /* Action column */
+        }
+        #completeButton {
+            display: none; /* Hide by default */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: #2ecc71;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        #completeButton:hover {
+            background-color: #27ae60;
+        }
+        .disabledButton {
+            background-color: #e0e0e0;
+            color: #b0b0b0;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do's</h1>
+    <div style="display: flex; justify-content: center;">
+        <input type="text" id="taskInput" placeholder="Enter Your Task">
+        <button id="addButton">Add</button>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Date</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+    </table>
+
+    <!-- Complete Button -->
+    <button id="completeButton">Complete</button>
+
+    <script>
+        const addButton = document.getElementById('addButton');
+        const completeButton = document.getElementById('completeButton');
+        let checkedCheckboxes = []; // Track the checked checkboxes
+
+        addButton.addEventListener('click', function() {
+            const taskInput = document.getElementById('taskInput');
+            const taskValue = taskInput.value;
+            const currentDate = new Date().toLocaleDateString();
+
+            if (taskValue) {
+                const taskList = document.getElementById('taskList');
+                const newRow = document.createElement('tr');
+
+                newRow.innerHTML = `
+                    <td><input type="checkbox" class="statusCheckbox"></td>
+                    <td>${currentDate}</td>
+                    <td class="taskText">${taskValue}</td>
+                    <td class="status"></td>
+                    <td>
+                        <button class="editButton">Edit</button>
+                        <button class="deleteButton">Delete</button>
+                    </td>
+                `;
+
+                taskList.appendChild(newRow);
+                taskInput.value = '';
+
+                // Add event listeners for the new row
+                const deleteButton = newRow.querySelector('.deleteButton');
+                deleteButton.addEventListener('click', function() {
+                    taskList.removeChild(newRow);
+                    updateCompleteButtonVisibility();
+                });
+
+                const editButton = newRow.querySelector('.editButton');
+                editButton.addEventListener('click', function() {
+                    const taskText = newRow.querySelector('.taskText');
+                    const newTaskValue = prompt("Edit your task:", taskText.textContent);
+                    if (newTaskValue) {
+                        taskText.textContent = newTaskValue;
+                    }
+                });
+
+                const statusCheckbox = newRow.querySelector('.statusCheckbox');
+                statusCheckbox.addEventListener('change', function() {
+                    if (statusCheckbox.checked) {
+                        if (!checkedCheckboxes.includes(statusCheckbox)) {
+                            checkedCheckboxes.push(statusCheckbox);
+                        }
+                    } else {
+                        checkedCheckboxes = checkedCheckboxes.filter(checkbox => checkbox !== statusCheckbox);
+                        const row = statusCheckbox.parentElement.parentElement;
+                        const statusCell = row.querySelector('.status');
+                        statusCell.textContent = ''; // Clear the status when unchecked
+                        row.querySelector('.taskText').classList.remove('completed');
+                    }
+                    updateCompleteButtonVisibility();
+                });
+            }
+        });
+
+        completeButton.addEventListener('click', function() {
+            if (checkedCheckboxes.length > 0) {
+                checkedCheckboxes.forEach(checkbox => {
+                    const row = checkbox.parentElement.parentElement;
+                    const statusCell = row.querySelector('.status');
+                    const taskText = row.querySelector('.taskText');
+
+                    statusCell.textContent = 'Completed';
+                    taskText.classList.add('completed');
+
+                    // Disable buttons for completed tasks
+                    disableButtons(row);
+                });
+                checkedCheckboxes = []; // Clear the checked checkboxes array
+                updateCompleteButtonVisibility();
+            }
+        });
+
+        function updateCompleteButtonVisibility() {
+            const anyCheckboxChecked = Array.from(document.querySelectorAll('.statusCheckbox:checked')).some(checkbox => 
+                !checkbox.parentElement.parentElement.querySelector('.taskText').classList.contains('completed')
+            );
+            
+            completeButton.style.display = anyCheckboxChecked ? 'block' : 'none';
+        }
+
+        function disableButtons(row) {
+            const editButton = row.querySelector('.editButton');
+            const deleteButton = row.querySelector('.deleteButton');
+            const statusCheckbox = row.querySelector('.statusCheckbox');
+
+            editButton.classList.add('disabledButton');
+            deleteButton.classList.add('disabledButton');
+            statusCheckbox.disabled = true; // Disable the checkbox
+            editButton.disabled = true;
+            deleteButton.disabled = true;
+        }
+    </script>
+    
+</body>
+</html>

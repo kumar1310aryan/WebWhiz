@@ -136,83 +136,102 @@
     <button id="completeButton">Complete</button>
 
     <script>
-        const addButton = document.getElementById('addButton');
-        const completeButton = document.getElementById('completeButton');
-        let checkedCheckboxes = []; // Track the checked checkboxes
-    
-        addButton.addEventListener('click', function() {
-            const taskInput = document.getElementById('taskInput');
-            const taskValue = taskInput.value;
-            const currentDate = new Date().toLocaleDateString();
-    
-            if (taskValue) {
-                const taskList = document.getElementById('taskList');
-                const newRow = document.createElement('tr');
-    
-                newRow.innerHTML = `
-                    <td><input type="checkbox" class="statusCheckbox"></td>
-                    <td>${currentDate}</td>
-                    <td class="taskText">${taskValue}</td>
-                    <td class="status"></td>
-                    <td>
-                        <button class="editButton">Edit</button>
-                        <button class="deleteButton">Delete</button>
-                    </td>
-                `;
-    
-                taskList.appendChild(newRow);
-                taskInput.value = '';
-    
-                // Add event listeners for the new row
-                const deleteButton = newRow.querySelector('.deleteButton');
-                deleteButton.addEventListener('click', function() {
-                    taskList.removeChild(newRow);
-                    updateCompleteButtonVisibility();
-                });
-    
-                const editButton = newRow.querySelector('.editButton');
-                editButton.addEventListener('click', function() {
-                    const taskText = newRow.querySelector('.taskText');
-                    const newTaskValue = prompt("Edit your task:", taskText.textContent);
-                    if (newTaskValue) {
-                        taskText.textContent = newTaskValue;
-                    }
-                });
-    
-                const statusCheckbox = newRow.querySelector('.statusCheckbox');
-                statusCheckbox.addEventListener('change', function() {
-                    if (statusCheckbox.checked) {
-                        if (!checkedCheckboxes.includes(statusCheckbox)) {
-                            checkedCheckboxes.push(statusCheckbox);
-                        }
-                    } else {
-                        checkedCheckboxes = checkedCheckboxes.filter(checkbox => checkbox !== statusCheckbox);
-                    }
-                    updateCompleteButtonVisibility();
-                });
-            }
-        });
-    
-        completeButton.addEventListener('click', function() {
-            if (checkedCheckboxes.length > 0) {
-                checkedCheckboxes.forEach(checkbox => {
-                    const row = checkbox.parentElement.parentElement;
-                    const statusCell = row.querySelector('.status');
-                    const taskText = row.querySelector('.taskText');
-    
-                    statusCell.textContent = 'Completed';
-                    taskText.classList.add('completed');
-                });
-                checkedCheckboxes = []; // Clear the checked checkboxes array
+    const addButton = document.getElementById('addButton');
+    const completeButton = document.getElementById('completeButton');
+    let checkedCheckboxes = []; // Track the checked checkboxes
+
+    addButton.addEventListener('click', function() {
+        const taskInput = document.getElementById('taskInput');
+        const taskValue = taskInput.value;
+        const currentDate = new Date().toLocaleDateString();
+
+        if (taskValue) {
+            const taskList = document.getElementById('taskList');
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td><input type="checkbox" class="statusCheckbox"></td>
+                <td>${currentDate}</td>
+                <td class="taskText">${taskValue}</td>
+                <td class="status"></td>
+                <td>
+                    <button class="editButton">Edit</button>
+                    <button class="deleteButton">Delete</button>
+                </td>
+            `;
+
+            taskList.appendChild(newRow);
+            taskInput.value = '';
+
+            // Add event listeners for the new row
+            const deleteButton = newRow.querySelector('.deleteButton');
+            deleteButton.addEventListener('click', function() {
+                taskList.removeChild(newRow);
                 updateCompleteButtonVisibility();
-            }
-        });
-    
-        function updateCompleteButtonVisibility() {
-            const anyCheckboxChecked = document.querySelector('.statusCheckbox:checked');
-            completeButton.style.display = anyCheckboxChecked ? 'block' : 'none';
+            });
+
+            const editButton = newRow.querySelector('.editButton');
+            editButton.addEventListener('click', function() {
+                const taskText = newRow.querySelector('.taskText');
+                const newTaskValue = prompt("Edit your task:", taskText.textContent);
+                if (newTaskValue) {
+                    taskText.textContent = newTaskValue;
+                }
+            });
+
+            const statusCheckbox = newRow.querySelector('.statusCheckbox');
+            statusCheckbox.addEventListener('change', function() {
+                if (statusCheckbox.checked) {
+                    if (!checkedCheckboxes.includes(statusCheckbox)) {
+                        checkedCheckboxes.push(statusCheckbox);
+                    }
+                } else {
+                    checkedCheckboxes = checkedCheckboxes.filter(checkbox => checkbox !== statusCheckbox);
+                    const row = statusCheckbox.parentElement.parentElement;
+                    const statusCell = row.querySelector('.status');
+                    statusCell.textContent = ''; // Clear the status when unchecked
+                    row.querySelector('.taskText').classList.remove('completed');
+                }
+                updateCompleteButtonVisibility();
+            });
         }
-    </script>
+    });
+
+    completeButton.addEventListener('click', function() {
+        if (checkedCheckboxes.length > 0) {
+            checkedCheckboxes.forEach(checkbox => {
+                const row = checkbox.parentElement.parentElement;
+                const statusCell = row.querySelector('.status');
+                const taskText = row.querySelector('.taskText');
+
+                statusCell.textContent = 'Completed';
+                taskText.classList.add('completed');
+
+                hideButtons(row); // Hide buttons when the task is completed
+            });
+            checkedCheckboxes = []; // Clear the checked checkboxes array
+            updateCompleteButtonVisibility();
+        }
+    });
+
+    function updateCompleteButtonVisibility() {
+        const anyIncompleteCheckboxChecked = document.querySelector('.statusCheckbox:checked') &&
+            !document.querySelector('.statusCheckbox:checked').parentElement.parentElement.querySelector('.taskText').classList.contains('completed');
+        
+        completeButton.style.display = anyIncompleteCheckboxChecked ? 'block' : 'none';
+    }
+
+    function hideButtons(row) {
+        const editButton = row.querySelector('.editButton');
+        const deleteButton = row.querySelector('.deleteButton');
+        const statusCheckbox = row.querySelector('.statusCheckbox');
+
+        editButton.style.display = 'none';
+        deleteButton.style.display = 'none';
+        statusCheckbox.style.display = 'none';
+    }
+</script>
+
     
 </body>
 </html>
