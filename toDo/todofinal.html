@@ -184,9 +184,10 @@
                 const editButton = newRow.querySelector('.editButton');
                 editButton.addEventListener('click', function() {
                     const taskText = newRow.querySelector('.taskText');
+                    const originalTaskValue = taskText.textContent; // Store the original task value
                     const editInput = document.createElement('input');
                     editInput.type = 'text';
-                    editInput.value = taskText.textContent;
+                    editInput.value = originalTaskValue;
                     editInput.className = 'editInput';
 
                     const saveButton = document.createElement('button');
@@ -199,7 +200,7 @@
                     taskText.appendChild(saveButton);
 
                     saveButton.addEventListener('click', function() {
-                        taskText.textContent = editInput.value || taskText.textContent; // Update task or keep old value
+                        taskText.textContent = editInput.value || originalTaskValue; // Update task or keep old value
                     });
                 });
 
