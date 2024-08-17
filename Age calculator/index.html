@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <style>
+      body {
+        /* background-color: #f674de; */
+        color: #fff;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0b4665, #0066cc, #00ccff, #003366);
+        background-size: 400% 400%;
+        animation: gradientAnimation 3s ease infinite;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        text-align: center;
+        border: 5px solid #ffcc00;
+        border-radius: 15px;
+        padding: 20px;
+        background: linear-gradient(135deg, #ff6600, #cc0000);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin: 0;
+        animation: flicker 1.5s infinite alternate;
+      }
+
+      .age {
+        font-size: 2rem;
+        margin: 20px 0;
+        display: none; 
+      }
+
+      .age-diff-container {
+        border: 5px solid #00ccff;
+        border-radius: 15px;
+        padding: 20px;
+        background: linear-gradient(135deg, #003366, #006699);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffcc00;
+        color: #000;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #ff9900;
+      }
+
+      input {
+        padding: 10px;
+        border: 2px solid #ffcc00;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 10px;
+        background-color: #333;
+        color: #fff;
+      }
+
+      .scramble {
+        display: inline-block;
+        font-weight: bold;
+        animation: scramble 1s ease-in-out forwards;
+      }
+
+      @keyframes scramble {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.5);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Current Age Calculator</h1>
+      <input type="date" id="birthDateInput" />
+      <button onclick="calculateAndDisplayAge()">Calculate Age</button>
+      <div class="age" id="ageDisplay">Age: <span id="ageResult"></span></div>
+    </div>
+
+    <div class="age-diff-container">
+      <h2>Calculate Age Difference</h2>
+      <input type="date" id="startDateInput" />
+      <input type="date" id="endDateInput" />
+      <button onclick="calculateAndDisplayAgeDifference()">
+        Calculate Difference
+      </button>
+      <div class="age" id="ageDiffDisplay">
+        Difference: <span id="ageDiffResult"></span>
+      </div>
+    </div>
+
+    <script>
+      function calculateAge(birthDate) {
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = today.getDate() - birthDate.getDate();
+
+        if (months < 0 || (months === 0 && days < 0)) {
+          age--;
+          months += 12;
+        }
+
+        if (days < 0) {
+          months--;
+          const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+          days += lastMonth.getDate();
+        }
+
+        return { years: age, months: months, days: days };
+      }
+
+      function scrambleNumbers(age, resultElement) {
+        resultElement.innerHTML = "";
+
+        const scrambledText = `${age.years} years, ${age.months} months, and ${age.days} days`;
+        const scrambleDuration = 200;
+
+        for (let i = 0; i < scrambledText.length; i++) {
+          setTimeout(() => {
+            resultElement.innerHTML += `<span class="scramble">${scrambledText[i]}</span>`;
+          }, i * scrambleDuration);
+        }
+      }
+
+      function calculateAndDisplayAge() {
+        const birthDateInput = document.getElementById("birthDateInput").value;
+        if (!birthDateInput) {
+          alert("Please enter your birth date.");
+          return;
+        }
+
+        const birthDate = new Date(birthDateInput);
+        const age = calculateAge(birthDate);
+        const ageDisplay = document.getElementById("ageDisplay");
+        ageDisplay.style.display = "block"; 
+        scrambleNumbers(age, document.getElementById("ageResult"));
+      }
+
+      function calculateAgeDifference(startDate, endDate) {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        let ageDiff = end.getFullYear() - start.getFullYear();
+        let months = end.getMonth() - start.getMonth();
+        let days = end.getDate() - start.getDate();
+
+        if (months < 0 || (months === 0 && days < 0)) {
+          ageDiff--;
+          months += 12;
+        }
+
+        if (days < 0) {
+          months--;
+          const lastMonth = new Date(end.getFullYear(), end.getMonth(), 0);
+          days += lastMonth.getDate();
+        }
+
+        return { years: ageDiff, months: months, days: days };
+      }
+
+      function calculateAndDisplayAgeDifference() {
+        const startDateInput = document.getElementById("startDateInput").value;
+        const endDateInput = document.getElementById("endDateInput").value;
+
+        if (!startDateInput || !endDateInput) {
+          alert("Please enter both dates.");
+          return;
+        }
+
+        const ageDiff = calculateAgeDifference(startDateInput, endDateInput);
+        const ageDiffDisplay = document.getElementById("ageDiffDisplay");
+        ageDiffDisplay.style.display = "block"; 
+        scrambleNumbers(ageDiff, document.getElementById("ageDiffResult"));
+      }
+    </script>
+  </body>
+</html>

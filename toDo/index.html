@@ -271,14 +271,14 @@
       saveButton.addEventListener("click", function () {
         if (currentEditingRow) {
           const taskText = currentEditingRow.querySelector(".taskText");
-          const previousValue=taskText.textContent;
+          const previousValue = taskText.textContent;
           const newValue = document.getElementById("editTaskInput").value;
-          if(newValue){
+          if (newValue) {
             taskText.textContent = newValue;
-          }else{
-            taskText.textContent=previousValue;
+          } else {
+            taskText.textContent = previousValue;
           }
-          
+
           document.getElementById("editTaskInput").value = "";
           currentEditingRow = null;
           taskSection.classList.remove("hidden");
