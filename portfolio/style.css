@@ -13,6 +13,18 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
+}
+
+#crsr {
+  height: 2vw;
+  width: 2vw;
+  border: 2px solid rgba(255, 255, 255, 0.773);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
 }
 
 #loader {
