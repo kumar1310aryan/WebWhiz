@@ -43,6 +43,10 @@ body {
   gap: 20px;
 }
 
+#dot {
+  opacity: 0;
+}
+
 h1 {
   font-size: 50px;
   font-family: "Tesla", sans-serif;

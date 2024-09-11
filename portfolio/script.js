@@ -1,6 +1,16 @@
 function loadingAnimation() {
   var tl = gsap.timeline();
 
+  var tldot = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
+
+  tldot
+    .fromTo(
+      "#dot",
+      { opacity: 0 },
+      { opacity: 1, stagger: 0.2, duration: 0.5, delay: 0.5 }
+    )
+    .to("#dot", { opacity: 0, stagger: 0.2, duration: 0.5 });
+
   tl.from(".a", {
     opacity: 0,
     stagger: 0.2,
