@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Tesla";
+  src: url(./font/TESLA.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  height: 100vh;
+  width: 100vw;
+  background-color: antiquewhite;
+}
+
+/* page1 */
+
+#page1 {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: rgba(88, 152, 150, 0.572);
+
+  #nav {
+    width: 100%;
+    height: 4vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 5vw;
+
+    #nav-left {
+      font-size: 1.5vw;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+
+    #nav-right a {
+      margin-left: 5vw;
+      text-decoration: none;
+      color: black;
+      font-size: 1.2vw;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+  }
+}
+
+#digitize {
+  height: 50vh;
+  width: 100vw;
+  margin-top: 5vw;
+  padding: 0 5vw;
+
+  #digitize-one,
+  #digitize-two {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 12.5vw;
+    font-family: "Tesla";
+  }
+}
+
+#playandstars {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+#play {
+  height: 80px;
+  width: 350px;
+  background-color: rgb(0, 105, 128);
+  border-radius: 40px;
+  position: absolute;
+  top: 2vw;
+  left: 4vw;
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+
+  #play-circle {
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+  }
+}
+
+#stars {
+  height: 10px;
+  width: 250px;
+  display: flex;
+  position: absolute;
+  top: calc(4vw + 80px);
+  left: 8vw;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#digitize-two p {
+  font-size: 1.3vw;
+  line-height: 2vw;
+  font-family: monospace;
+  letter-spacing: -1px;
+  position: relative;
+  left: -3vw;
+  top: 4vw;
+}
+
+#digitize-below {
+  height: 40px;
+  width: 100%;
+  padding: 0 4vw;
+  display: flex;
+  align-items: center;
+
+  #agency {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    #best-agency,
+    #class-agency {
+      height: 100%;
+      width: 48%;
+      border: 2px solid black;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-family: monospace;
+    }
+  }
+
+  #line {
+    width: 50%;
+    height: 1px;
+    background-color: black;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      font-size: 30px;
+      position: relative;
+      top: -9px;
+    }
+  }
+}
