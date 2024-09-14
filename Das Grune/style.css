@@ -329,12 +329,13 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 3vw;
+  
 
   #design-contents {
     width: 90%;
     height: 100%;
-    /* background-color: black; */
     color: gray;
+    
 
     .design-div {
       display: flex;
@@ -343,6 +344,7 @@ body {
       color: rgba(240, 248, 255, 0.606);
       padding-left: 1vw;
       padding-right: 2vw;
+      transition: all 0.3s ease;
 
       h1 {
         font-size: 4vw;
@@ -421,6 +423,13 @@ body {
   margin-left: 1vw;
   margin-right: 1vw;
   border-radius: 30px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.square-div #one:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
 }
 
 .square-div #two {
@@ -433,6 +442,12 @@ body {
   margin-left: 1vw;
   margin-right: 1vw;
   border-radius: 30px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease ;
+}
+.square-div #two:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
 }
 
 .square-div #three {
@@ -446,6 +461,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+.square-div #three:hover {
+  filter: grayscale(100%);
+  cursor: pointer;
 }
 
 .square-div #four {
@@ -458,4 +478,11 @@ body {
   margin-left: 1vw;
   margin-right: 1vw;
   border-radius: 30px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.square-div #four:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
 }
