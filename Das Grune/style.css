@@ -382,6 +382,9 @@ body {
 }
 
 /* page3 */
+
+
+
 #page3 {
   width: 100vw;
   min-height: 100vh;
@@ -393,7 +396,7 @@ body {
 
 #page3-square {
   width: 82vw;
-  height: 90vh;
+  height: 90%;
   background-color: rgba(62, 59, 59, 0.661);
   padding-top: 5.5vw;
   padding-bottom: 5.5vw;
@@ -485,4 +488,14 @@ body {
 .square-div #four:hover {
   filter: grayscale(0%);
   cursor: pointer;
+}
+
+
+
+/* page4 */
+
+#page4{
+width: 100vw;
+min-height: 100vh;
+background-color: rgb(22, 21, 21);
 }
