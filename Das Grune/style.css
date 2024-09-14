@@ -379,8 +379,83 @@ body {
   font-size: 4vw;
 }
 
-
-
 /* page3 */
+#page3 {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(22, 21, 21);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#page3-square {
+  width: 82vw;
+  height: 90vh;
+  background-color: rgba(62, 59, 59, 0.661);
+  padding-top: 5.5vw;
+  padding-bottom: 5.5vw;
+  padding-right: 6.5vw;
+  padding-left: 6.5vw;
+  color: white;
+  font-size: 4vw;
 
+  .square-div {
+    width: 100%;
+    height: fit-content;
+    font-size: 6vw;
+    display: flex;
+    text-transform: uppercase;
+    text-align: justify;
+    align-items: center;
+  }
+}
+
+.square-div #one {
+  width: 15vw;
+  height: 3.5vw;
+  background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+  background-position: bottom;
+  background-size: cover;
+  align-items: end;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-radius: 30px;
+}
+
+.square-div #two {
+  width: 10vw;
+  height: 3.5vw;
+  background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  align-items: end;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-radius: 30px;
+}
+
+.square-div #three {
+  width: 7vw;
+  height: 3.5vw;
+  background-color: rgba(10, 159, 159, 0.834);
+  align-items: end;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square-div #four {
+  width: 10.2vw;
+  height: 3.5vw;
+  background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+  background-position: top;
+  background-size: cover;
+  align-items: end;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-radius: 30px;
+}
