@@ -53,6 +53,41 @@ body {
   }
 }
 
+/* nav links hover effect */
+.pseudo-text-effect {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.4s;
+  display: inline-block; /* Maintain original position */
+}
+
+.pseudo-text-effect::after {
+  content: attr(data-after);
+  transform: translateY(100%);
+  position: absolute;
+  left: 0;
+  top: 0; /* Start from the top */
+  width: 100%; /* Cover the entire width */
+  transition: inherit;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.pseudo-text-effect > span {
+  display: inline-block;
+  transform: translateY(0%);
+  transition: inherit;
+}
+
+.pseudo-text-effect:hover > span {
+  transform: translateY(-100%);
+}
+
+.pseudo-text-effect:hover::after {
+  transform: translateY(0%);
+}
+/* end------end */
+
 #digitize {
   height: 25vw;
   width: 100vw;
