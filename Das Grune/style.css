@@ -54,25 +54,34 @@ body {
   }
 }
 
+/* scramble effect on hover */
+.scramble {
+  transition: color 0.3s ease;
+}
+
+.scramble:hover {
+  color: rgba(1, 41, 57, 0.934); 
+  cursor: pointer;
+}
+
 /* mouse enter digitize */
-.digitizeh1{
+.digitizeh1 {
   z-index: 2;
-  
 }
 .image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px; 
-  height: 250px; 
-  background-image: url("./images/photo-1698243282692-616402a5d535.avif"); 
+  width: 250px;
+  height: 250px;
+  background-image: url("./images/photo-1698243282692-616402a5d535.avif");
   background-size: cover;
   background-position: center;
-  display: none; 
-  pointer-events: none; 
+  display: none;
+  pointer-events: none;
   /* opacity: 0.9; */
   z-index: 1;
-  border-radius:40%;
+  border-radius: 40%;
 }
 
 /* nav links hover effect */
@@ -812,15 +821,15 @@ body {
     }
   }
 
-  #footer-bottom{
+  #footer-bottom {
     height: 50%;
     width: 100%;
     display: flex;
-    align-items:end;
+    align-items: end;
     justify-content: space-between;
     color: #4bb1c6;
     padding: 1vw;
-    h1{
+    h1 {
       font-size: 1vw;
     }
   }

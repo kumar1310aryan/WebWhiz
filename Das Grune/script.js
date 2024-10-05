@@ -25,3 +25,33 @@ function mousemoveOnDigitize() {
 }
 
 mousemoveOnDigitize();
+function scrambleText(elementId) {
+  const element = document.getElementById(elementId);
+  const originalText = element.innerText;
+  let scrambled = "";
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"; // Only alphabetic characters
+
+  element.addEventListener("mouseover", () => {
+    const scramble = setInterval(() => {
+      scrambled = "";
+      for (let i = 0; i < originalText.length; i++) {
+        if (originalText[i].match(/[a-zA-Z]/)) { // Only scramble alphabetic characters
+          scrambled += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        } else {
+          scrambled += originalText[i]; // Keep non-alphabetic characters the same
+        }
+      }
+      element.innerText = scrambled;
+    }, 50);
+
+    setTimeout(() => {
+      clearInterval(scramble);
+      element.innerText = originalText; // revert to original text
+    }, 400); 
+  });
+}
+
+// Apply the effect to multiple elements
+scrambleText("nav-left");
