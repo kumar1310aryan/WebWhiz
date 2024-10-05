@@ -23,24 +23,24 @@ function mousemoveOnDigitize() {
     });
   });
 }
-
 mousemoveOnDigitize();
+
 function scrambleText(elementId) {
   const element = document.getElementById(elementId);
   const originalText = element.innerText;
   let scrambled = "";
-  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"; // Only alphabetic characters
+  const characters = "abcdefghijklmnopqrstuvwxyz";
 
   element.addEventListener("mouseover", () => {
     const scramble = setInterval(() => {
       scrambled = "";
       for (let i = 0; i < originalText.length; i++) {
-        if (originalText[i].match(/[a-zA-Z]/)) { // Only scramble alphabetic characters
+        if (originalText[i].match(/[a-zA-Z]/)) {
           scrambled += characters.charAt(
             Math.floor(Math.random() * characters.length)
           );
         } else {
-          scrambled += originalText[i]; // Keep non-alphabetic characters the same
+          scrambled += originalText[i];
         }
       }
       element.innerText = scrambled;
@@ -48,10 +48,32 @@ function scrambleText(elementId) {
 
     setTimeout(() => {
       clearInterval(scramble);
-      element.innerText = originalText; // revert to original text
-    }, 400); 
+      element.innerText = originalText;
+    }, 400);
   });
 }
-
-// Apply the effect to multiple elements
 scrambleText("nav-left");
+
+function designHover() {
+  const designDivs = document.querySelectorAll(".design-div");
+  const hoverReveals = document.querySelectorAll(".hover-reveal");
+  const hiddenImages = document.querySelectorAll(".hidden-img");
+
+  for (let i = 0; i < designDivs.length; i++) {
+    // Mouse move event to reveal the image
+    designDivs[i].addEventListener("mousemove", (e) => {
+      hoverReveals[i].style.opacity = 1;
+      hoverReveals[i].style.transform = `translate(-100%, -50%) rotate(5deg)`;
+      hiddenImages[i].style.transform = "scale(1, 1)";
+      hoverReveals[i].style.left = e.clientX + "px";
+    });
+
+    // Mouse leave event to hide the image
+    designDivs[i].addEventListener("mouseleave", (e) => {
+      hoverReveals[i].style.opacity = 0;
+      hoverReveals[i].style.transform = `translate(-50%, -50%) rotate(-5deg)`;
+      hiddenImages[i].style.transform = "scale(0.8, 0.8)";
+    });
+  }
+}
+designHover();
