@@ -23,7 +23,7 @@ function mousemoveOnDigitize() {
     });
   });
 }
-mousemoveOnDigitize();
+// mousemoveOnDigitize();
 
 function scrambleText(elementId) {
   const element = document.getElementById(elementId);

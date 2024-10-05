@@ -53,10 +53,98 @@
     #image {
       height: 50vw;
     }
-    #arrow img{
-        width:10vw;
-        height: 10vw;
-       
+    #arrow img {
+      width: 10vw;
+      height: 10vw;
     }
   }
+
+  #services {
+    padding-top: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #services-left {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h1 {
+        font-size: 6vw;
+      }
+
+      p {
+        font-size: 2.9vw;
+      }
+    }
+
+    #services-right {
+      width: 100%;
+
+      #design,
+      #development,
+      #digital-marketing,
+      #seo {
+        font-size: 4vw;
+        height: 25px;
+      }
+      #design {
+        width: 100px;
+      }
+      #development {
+        width: 130px;
+      }
+      #digital-marketing {
+        width: 150px;
+      }
+      #seo {
+        width: 80px;
+      }
+    }
+  }
+  #designs {
+    padding-top: 25vw;
+  }
+
+  #page3 {
+    min-height: 40vh;
+  }
+
+  #best-project {
+    min-height: 40vw;
+
+    #project-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h1{
+        font-size: 6vw;
+        padding-bottom: 1vw;
+      }
+
+      p{
+        font-size: 2vw;
+      }
+    }
+
+    #design,#development,#digital-marketing,#seo{
+      font-size: 3vw;
+      height: 20px;
+    }
+    #seo{
+      width: 70px;
+    }
+    
+  }
+  #project-bottom{
+    gap: 0;
+    margin-left: -5px;
+  }
+
 }

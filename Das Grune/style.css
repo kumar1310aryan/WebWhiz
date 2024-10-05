@@ -854,6 +854,7 @@ body {
     justify-content: center;
     color: #018da9;
     font-family: monospace;
+    padding-left: 0.8vw;
     p {
       font-size: 4vw;
       font-weight: 200;
@@ -867,7 +868,9 @@ body {
     align-items: end;
     justify-content: space-between;
     color: #4bb1c6;
-    padding: 1vw;
+    padding-left: 0.5vw;
+    padding-right: 2.5vw;
+    padding-bottom: 0.5vw;
     h1 {
       font-size: 1vw;
     }
