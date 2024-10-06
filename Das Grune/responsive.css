@@ -1,5 +1,41 @@
 @media (max-width: 500px) {
 
+  /* loader */
+  #loader h1 {
+    font-size: 40px;
+    font-family: "Tesla", sans-serif;
+    letter-spacing: 3px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-left: 1vw;
+  }
+  
+  .line {
+    width: 340px;
+    height: 10px;
+    background-color: white;
+    margin-left: -5px;
+  }
+  
+  .green {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(0, 105, 128);
+  }
+  
+  .percentage {
+    height: 42px;
+    width: 200px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Tesla", sans-serif;
+    margin-left: -10px;
+  }
+
+
   #nav-left{
     display: none;
   }
