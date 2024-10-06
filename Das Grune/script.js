@@ -1,3 +1,63 @@
+function loadingAnimation() {
+  var tl = gsap.timeline();
+
+  var tldot = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
+
+  tldot
+    .fromTo(
+      "#dot",
+      { opacity: 0 },
+      { opacity: 1, stagger: 0.2, duration: 0.5, delay: 0.5 }
+    )
+    .to("#dot", { opacity: 0, stagger: 0.2, duration: 0.5 });
+
+  tl.from(".a", {
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.6,
+    delay: 0.5,
+    onComplete: function () {
+      var percentage = document.querySelector(".percentage");
+      var green = document.querySelector(".green");
+      var i = 0;
+      var interval = setInterval(function () {
+        if (i < 100) {
+          i++;
+          green.style.width = i + "%";
+          percentage.innerHTML = `${i}%`;
+        } else {
+          clearInterval(interval);
+          percentage.innerHTML = "100%";
+          green.style.width = "100%";
+        }
+      }, 40);
+    },
+  });
+
+  tl.to("#loader", {
+    opacity: 0,
+    duration: 0.2,
+    delay: 4,
+    onComplete: function () {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("main").style.display = "block";
+    },
+  });
+
+  tl.from("#page1", {
+    delay: 0.2,
+    y: 1200,
+    opacity: 0,
+    duration: 0.5,
+    ease: "power4.out",
+  });
+
+  tl.to("#loader", {
+    display: "none",
+  });
+}
+loadingAnimation();
+
 function mousemoveOnDigitize() {
   const h1Elements = document.querySelectorAll(".digitizeh1");
   const image = document.querySelector(".image");
@@ -77,9 +137,39 @@ function designHover() {
 }
 designHover();
 
+function imageHover() {
+  const imageDiv = document.getElementById("image");
+  const arrowDiv = document.getElementById("arrow");
+
+  imageDiv.addEventListener("mousemove", (event) => {
+    const rect = imageDiv.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    // Update the arrow div's position to follow the mouse
+    arrowDiv.style.left = `${x - arrowDiv.offsetWidth / 2}px`;
+    arrowDiv.style.top = `${y - arrowDiv.offsetHeight / 2}px`;
+  });
+
+  imageDiv.addEventListener("mouseleave", () => {
+    arrowDiv.style.left = "80%";
+    arrowDiv.style.top = "0%";
+  });
+}
+imageHover();
+
 const tl = gsap.timeline();
 
-tl.fromTo(".digitizeh1", 
-  { opacity: 0, y: 50 }, 
-  { opacity: 1, y: 0, duration: 1.5, stagger: 0.5, ease: "power3.out", delay: 0.3 }
+tl.fromTo(
+  ".digitizeh1",
+  { opacity: 0, y: 50 },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    stagger: 0.5,
+    ease: "power3.out",
+    delay: 0.3,
+  }
 );
