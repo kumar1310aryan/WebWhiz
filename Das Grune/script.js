@@ -208,9 +208,8 @@ function imageHover() {
 }
 imageHover();
 
-const tl = gsap.timeline();
 
-tl.fromTo(
+gsap.fromTo(
   ".digitizeh1",
   { opacity: 0, y: 50 },
   {
@@ -219,6 +218,6 @@ tl.fromTo(
     duration: 1.5,
     stagger: 0.5,
     ease: "power3.out",
-    delay: 0.3,
+    delay: 6.3,
   }
 );
