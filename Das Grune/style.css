@@ -232,6 +232,8 @@ body {
   display: flex;
   align-items: center;
   padding-left: 7px;
+  transition: 0.3s;
+  justify-content: flex-start;
 
   #play-circle {
     height: 4.8vw;
@@ -241,12 +243,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease;
 
     img {
       width: 3.5vw;
       height: 3.5vw;
     }
   }
+}
+#play.playing {
+  justify-content: flex-end; /* Align circle to the right when in "playing" state */
+  padding-right: 7px; /* Add the 7px padding on the right */
 }
 
 #stars {
@@ -292,7 +299,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.7vw;
+      font-size: 1.6vw;
       font-weight: bold;
       font-family: monospace;
     }

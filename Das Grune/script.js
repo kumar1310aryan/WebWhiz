@@ -51,6 +51,13 @@ function loadingAnimation() {
     duration: 0.5,
     ease: "power4.out",
   });
+  tl.from("#page2", {
+    delay: 0.2,
+    y: 1200,
+    opacity: 0,
+    duration: 0.5,
+    ease: "power4.out",
+  });
 
   tl.to("#loader", {
     display: "none",
@@ -83,6 +90,48 @@ function mousemoveOnDigitize() {
     });
   });
 }
+
+function play() {
+  const playCircle = document.getElementById("play-circle");
+  const playImage = document.getElementById("play-image");
+  let isPlaying = false;
+
+  playCircle.addEventListener("click", function () {
+    if (isPlaying) {
+      playCircle.style.transform = "translateX(0)";
+      playImage.src = "./images/play.svg";
+    } else {
+      const playContainerWidth = document.getElementById("play").offsetWidth;
+      const playCircleWidth = playCircle.offsetWidth;
+      const moveDistance = playContainerWidth - playCircleWidth - 12;
+      playCircle.style.transform = `translateX(${moveDistance}vw )`;
+      playImage.src = "./images/pause.svg";
+    }
+    isPlaying = !isPlaying;
+  });
+}
+// play();
+
+function playFinal() {
+  const play = document.getElementById("play");
+  const playCircle = document.getElementById("play-circle");
+  const playImage = document.getElementById("play-image");
+  let isPlaying = false;
+
+  playCircle.addEventListener("click", function () {
+    if (isPlaying) {
+      
+      play.classList.remove("playing"); 
+      playImage.src = "./images/play.svg";
+    } else {
+      
+      play.classList.add("playing"); 
+      playImage.src = "./images/pause.svg";
+    }
+    isPlaying = !isPlaying;
+  });
+}
+playFinal();
 
 function scrambleText(elementId) {
   const element = document.getElementById(elementId);
