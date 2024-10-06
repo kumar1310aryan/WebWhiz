@@ -1,4 +1,21 @@
-@media (max-width: 450px) {
+@media (max-width: 500px) {
+
+  #nav-left{
+    display: none;
+  }
+
+  #nav-right{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #nav-right a {
+    display: none;
+  }
+
+
+
   #play {
     height: 6vw;
   }
@@ -84,6 +101,11 @@
 
     #services-right {
       width: 100%;
+      padding-top: 10vw;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       #design,
       #development,
@@ -93,7 +115,8 @@
         height: 25px;
       }
       #design {
-        width: 100px;
+        width: 95px;
+        margin-left: 5px;
       }
       #development {
         width: 130px;
@@ -145,6 +168,10 @@
   #project-bottom{
     gap: 0;
     margin-left: -5px;
+  }
+
+  #services-right{
+    padding: 0;
   }
 
 }

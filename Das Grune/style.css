@@ -40,7 +40,7 @@ body {
     #nav-left {
       font-size: 1.5vw;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 500;
+      font-weight: bolder;
       letter-spacing: -1px;
     }
 
@@ -49,6 +49,7 @@ body {
       text-decoration: none;
       color: black;
       font-size: 1.2vw;
+      font-weight: bold;
       font-family: monospace;
     }
   }
@@ -137,8 +138,28 @@ body {
     font-size: 12.5vw;
     font-family: "Tesla";
     color: rgba(1, 41, 57, 0.934);
+    display: flex;
+      letter-spacing: -0.6vw;
   }
 }
+
+/* digitize hover */
+.digitizeh1 {
+  white-space: nowrap; 
+}
+
+.digitizeh1 span {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  transform-origin: bottom;
+}
+
+
+.digitizeh1 span:hover {
+  transform: scaleY(1.5); 
+}
+
+
 
 #playandstars {
   width: 50%;
@@ -219,7 +240,8 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 1.7vw;
+      font-weight: bold;
       font-family: monospace;
     }
   }
@@ -252,7 +274,7 @@ body {
   justify-content: center;
   position: relative;
   #image {
-    height: 80vh;
+    height: 40vw;
     width: 85%;
     margin-top: 4vw;
     background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
@@ -713,16 +735,16 @@ body {
       background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
       background-size: cover;
       background-position: bottom;
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
       transition: all 0.3s ease;
     }
     #top-img2 {
       height: 100%;
       width: 66%;
-      background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+      background-image: url("./images/imgfour.avif");
       background-size: cover;
-      background-position: bottom;
-      filter: grayscale(100%);
+      background-position: center;
+      /* filter: grayscale(100%); */
       transition: all 0.3s ease;
     }
   }
@@ -736,28 +758,28 @@ body {
     #bottom-img1 {
       height: 100%;
       width: 32.5%;
-      background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+      background-image: url("./images/imgone.avif");
       background-size: cover;
       background-position: right;
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
       transition: all 0.3s ease;
     }
     #bottom-img2 {
       height: 100%;
       width: 32.5%;
-      background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+      background-image: url("./images/imgtwo.avif");
       background-size: cover;
       background-position: right;
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
       transition: all 0.3s ease;
     }
     #bottom-img3 {
       height: 100%;
       width: 32.5%;
-      background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+      background-image: url("./images/imgthree.avif");
       background-size: cover;
       background-position: right;
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
       transition: all 0.3s ease;
     }
   }

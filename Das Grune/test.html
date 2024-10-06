@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Effect on DIGITIZE</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 5rem;
+      color: #333;
+      display: flex;
+    }
+
+    .digitizeh1 span {
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+      transform-origin: bottom;
+    }
+
+    /* 3D effect on hover */
+    .digitizeh1 span:hover {
+      transform: scaleY(1.5); /* Increase height */
+      color: #3498db; /* Change color */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="digitizeh1">
+    <span>D</span>
+    <span>I</span>
+    <span>G</span>
+    <span>I</span>
+    <span>T</span>
+    <span>I</span>
+    <span>Z</span>
+    <span>E</span>
+  </h1>
+
+  <!-- GSAP CDN (Optional if you'd like to animate on hover) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</body>
+</html>
