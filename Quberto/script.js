@@ -1,3 +1,32 @@
+function loaderAnimation() {
+  window.addEventListener("load", () => {
+    gsap
+      .timeline()
+      .to(".loader-content h3", {
+        opacity: 1,
+        duration: 1.5,
+        y: -20,
+        ease: "power2.out",
+        delay: 1,
+      })
+      .to(
+        ".loader-content h1",
+        { opacity: 1, duration: 1, y: -20, ease: "power2.out" },
+        "-=0.5"
+      )
+      .to("#loader", { opacity: 0, duration: 1, ease: "power2.out", delay: 1 })
+      .to("#loader", { display: "none" })
+      .to("#main", { display: "block" }) 
+      .from("#home", {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1,
+        ease: "power2.out",
+      });
+  });
+}
+loaderAnimation();
+
 Shery.mouseFollower();
 Shery.makeMagnet(".magnet");
 Shery.hoverWithMediaCircle(".hover", {
@@ -35,46 +64,46 @@ Shery.imageEffect(".images", {
 });
 
 function newInspoScrollAnimation() {
-  let lastScrollY = window.scrollY; // Store the initial scroll position
-  const heading = document.querySelector("#new-heading-wrapper"); // Select the wrapper
+  let lastScrollY = window.scrollY; 
+  const heading = document.querySelector("#new-heading-wrapper"); 
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-    // Check scroll direction
+   
     if (currentScrollY > lastScrollY) {
-      // Scrolling down: move the animation to the left
+      
       heading.style.animation = "marquee-left 20s linear infinite";
     } else {
-      // Scrolling up: move the animation to the right
+      
       heading.style.animation = "marquee-right 20s linear infinite";
     }
 
-    lastScrollY = currentScrollY; // Update lastScrollY with current position
+    lastScrollY = currentScrollY; 
   });
 }
 newInspoScrollAnimation();
 
 function sherymousefollowr() {
-  // Assuming Shery.mouseFollower() initializes the follower automatically
+  
   let isCustomFollowerActive = false;
 
   const mouseFollower = document.getElementById("mouse-follower");
   const dragElements = document.querySelectorAll(".drag");
 
-  // Function to show custom mouse follower
+ 
   function showCustomFollower() {
     mouseFollower.style.display = "block";
     isCustomFollowerActive = true;
   }
 
-  // Function to hide custom mouse follower
+  
   function hideCustomFollower() {
     mouseFollower.style.display = "none";
     isCustomFollowerActive = false;
   }
 
-  // Function to update the custom follower's position
+  
   function updateFollowerPosition(e) {
     const x = e.clientX;
     const y = e.clientY;
@@ -82,18 +111,18 @@ function sherymousefollowr() {
     mouseFollower.style.top = `${y}px`;
   }
 
-  // Event listeners for .drag elements
+  
   dragElements.forEach((drag) => {
     drag.addEventListener("mouseenter", () => {
-      // Disable Shery.js mouse follower
-      Shery.mouseFollower("destroy"); // or any method to disable it if available
+      
+      Shery.mouseFollower("destroy"); 
       showCustomFollower();
     });
 
     drag.addEventListener("mouseleave", () => {
       hideCustomFollower();
-      // Re-enable Shery.js mouse follower if needed
-      Shery.mouseFollower(); // or any method to re-enable it if available
+      
+      Shery.mouseFollower(); 
     });
 
     drag.addEventListener("mousemove", (e) => {
@@ -101,7 +130,7 @@ function sherymousefollowr() {
     });
   });
 
-  // Optional: If Shery.js needs to be initialized on page load
+  
   document.addEventListener("DOMContentLoaded", () => {
     Shery.mouseFollower();
   });
@@ -111,20 +140,20 @@ function dragScroller() {
   const follower = document.getElementById("mouse-follower");
   const dragElements = document.querySelectorAll(".drag");
 
-  // Move the mouse follower with the mouse
+  
   document.addEventListener("mousemove", (e) => {
     follower.style.top = `${e.clientY}px`;
     follower.style.left = `${e.clientX}px`;
   });
 
-  // Show mouse follower on hover and hide when not hovering
+  
   dragElements.forEach((drag) => {
     drag.addEventListener("mouseenter", () => {
-      follower.style.opacity = 1; // Make the follower visible
+      follower.style.opacity = 1;
     });
 
     drag.addEventListener("mouseleave", () => {
-      follower.style.opacity = 0; // Hide the follower
+      follower.style.opacity = 0; 
     });
   });
 }
@@ -222,4 +251,4 @@ function locomotiveAnimation() {
   ScrollTrigger.refresh();
 }
 
-locomotiveAnimation();
+// locomotiveAnimation();
