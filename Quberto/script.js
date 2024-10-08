@@ -1,7 +1,7 @@
 Shery.mouseFollower();
 Shery.makeMagnet(".magnet");
 Shery.hoverWithMediaCircle(".hover", {
-  videos: ["./assets/1.mp4", "./assets/2.mp4", "./assets/3.mp4"],
+  videos: ["./assets/2.mp4", "./assets/3.mp4"],
 });
 
 gsap.to(".left-element", {
@@ -164,20 +164,16 @@ function inspoDragging() {
 
 inspoDragging();
 
-
 function followScrollAnimation() {
-  let lastScrollY = window.scrollY; 
+  let lastScrollY = window.scrollY;
   const heading = document.querySelector("#follow-heading-wrapper");
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-    
     if (currentScrollY > lastScrollY) {
-      
       heading.style.animation = "marquee-left 20s linear infinite";
     } else {
-      
       heading.style.animation = "marquee-right 20s linear infinite";
     }
 
