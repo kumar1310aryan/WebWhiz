@@ -324,7 +324,7 @@ body {
 
 /* #9dbbb2 */
 
-/* here day 2 */
+
 #digitilize-image {
   height: fit-content;
   width: 100%;
@@ -538,24 +538,24 @@ body {
 /* hover images on design divs */
 /* Style for design divisions */
 .design-div {
-  position: relative; /* To position the hover image */
-  cursor: pointer; /* Pointer cursor for hover effect */
+  position: relative;
+  cursor: pointer; 
 }
 
 /* Initially hidden image */
 .hover-reveal {
   position: absolute;
-  width: 240px; /* Adjust as needed */
-  height: 320px; /* Adjust as needed */
+  width: 240px; 
+  height: 320px; 
   top: 50%;
   left: 50%;
-  pointer-events: none; /* Disable pointer events on the image */
+  pointer-events: none; 
   transform: translate(-50%, -50%);
   overflow: hidden;
-  opacity: 0; /* Initially hidden */
-  transform: scale(0.8); /* Scale down for initial state */
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transition for smooth effect */
-  z-index: 0; /* Behind the text */
+  opacity: 0; 
+  transform: scale(0.8); 
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+  z-index: 0; 
 }
 
 /* Image styles */
@@ -568,9 +568,73 @@ body {
 
 /* Show image on hover */
 .design-div:hover .hover-reveal {
-  opacity: 1; /* Show image */
-  transform: translate(-50%, -50%) scale(1); /* Reset scale */
+  opacity: 1; 
+  transform: translate(-50%, -50%) scale(1); 
 }
+
+#page3-square {
+  width: 82vw;
+  height: 90vh; /* Use vh for better height control */
+  background-color: rgba(62, 59, 59, 0.661);
+  padding: 5.5vw 6.5vw;
+  color: white;
+  font-size: 4vw;
+  box-sizing: border-box; /* Ensure padding doesn't affect width/height */
+
+  /* Ensure cross-browser compatibility for transitions */
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.square-div {
+  width: 100%;
+  height: auto; /* Use auto instead of fit-content for better support */
+  font-size: 6vw;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  text-transform: uppercase;
+  text-align: justify;
+  align-items: center;
+}
+
+.square-div div {
+  border-radius: 30px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.square-div div:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.square-div #one,
+.square-div #two,
+.square-div #four {
+  background-image: url("./images/pawel-czerwinski-XM1YUUVXj64-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 15vw;
+  height: 15vh; /* Use vh for height */
+  margin: 1vw;
+}
+
+.square-div #two {
+  width: 10vw;
+  height: 10vh;
+}
+
+.square-div #four {
+  width: 10.2vw;
+  height: 10.2vh;
+  background-position: top;
+}
+
+
+
+
 
 
 /* page3 */
