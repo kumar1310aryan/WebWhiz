@@ -120,8 +120,28 @@ body {
   cursor: pointer;
 }
 
+#short-video {
+  margin-top: 22vw;
+  width: 100%;
+  height: 50vw;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+#short-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+}
+
 #home-bottom {
-  margin: 14vw 15vw;
+  margin: 10vw 15vw;
 
   p {
     font-size: 1.6vw;
@@ -325,7 +345,7 @@ body {
 }
 
 .scroller-content:hover {
-  cursor: pointer;
+  cursor: none;
 }
 
 .content-bg {
@@ -457,6 +477,13 @@ body {
   margin: 3vw;
   flex-shrink: 0;
   border-radius: 100px;
+  overflow: hidden;
+}
+
+#new-video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
 }
 
 @keyframes marquee-left {
