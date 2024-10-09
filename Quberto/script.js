@@ -16,7 +16,7 @@ function loaderAnimation() {
       )
       .to("#loader", { opacity: 0, duration: 1, ease: "power2.out", delay: 1 })
       .to("#loader", { display: "none" })
-      .to("#main", { display: "block" }) 
+      .to("#main", { display: "block" })
       .from("#home", {
         opacity: 0,
         scale: 0.8,
@@ -25,7 +25,6 @@ function loaderAnimation() {
       });
   });
 }
-loaderAnimation();
 
 Shery.mouseFollower();
 Shery.makeMagnet(".magnet");
@@ -64,46 +63,39 @@ Shery.imageEffect(".images", {
 });
 
 function newInspoScrollAnimation() {
-  let lastScrollY = window.scrollY; 
-  const heading = document.querySelector("#new-heading-wrapper"); 
+  let lastScrollY = window.scrollY;
+  const heading = document.querySelector("#new-heading-wrapper");
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-   
     if (currentScrollY > lastScrollY) {
-      
       heading.style.animation = "marquee-left 20s linear infinite";
     } else {
-      
       heading.style.animation = "marquee-right 20s linear infinite";
     }
 
-    lastScrollY = currentScrollY; 
+    lastScrollY = currentScrollY;
   });
 }
 newInspoScrollAnimation();
 
 function sherymousefollowr() {
-  
   let isCustomFollowerActive = false;
 
   const mouseFollower = document.getElementById("mouse-follower");
   const dragElements = document.querySelectorAll(".drag");
 
- 
   function showCustomFollower() {
     mouseFollower.style.display = "block";
     isCustomFollowerActive = true;
   }
 
-  
   function hideCustomFollower() {
     mouseFollower.style.display = "none";
     isCustomFollowerActive = false;
   }
 
-  
   function updateFollowerPosition(e) {
     const x = e.clientX;
     const y = e.clientY;
@@ -111,18 +103,16 @@ function sherymousefollowr() {
     mouseFollower.style.top = `${y}px`;
   }
 
-  
   dragElements.forEach((drag) => {
     drag.addEventListener("mouseenter", () => {
-      
-      Shery.mouseFollower("destroy"); 
+      Shery.mouseFollower("destroy");
       showCustomFollower();
     });
 
     drag.addEventListener("mouseleave", () => {
       hideCustomFollower();
-      
-      Shery.mouseFollower(); 
+
+      Shery.mouseFollower();
     });
 
     drag.addEventListener("mousemove", (e) => {
@@ -130,7 +120,6 @@ function sherymousefollowr() {
     });
   });
 
-  
   document.addEventListener("DOMContentLoaded", () => {
     Shery.mouseFollower();
   });
@@ -140,20 +129,18 @@ function dragScroller() {
   const follower = document.getElementById("mouse-follower");
   const dragElements = document.querySelectorAll(".drag");
 
-  
   document.addEventListener("mousemove", (e) => {
     follower.style.top = `${e.clientY}px`;
     follower.style.left = `${e.clientX}px`;
   });
 
-  
   dragElements.forEach((drag) => {
     drag.addEventListener("mouseenter", () => {
       follower.style.opacity = 1;
     });
 
     drag.addEventListener("mouseleave", () => {
-      follower.style.opacity = 0; 
+      follower.style.opacity = 0;
     });
   });
 }
@@ -252,3 +239,5 @@ function locomotiveAnimation() {
 }
 
 // locomotiveAnimation();
+
+loaderAnimation();
