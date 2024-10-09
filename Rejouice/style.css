@@ -61,6 +61,7 @@ body {
     justify-content: center;
     color: #ffffffd6;
     position: absolute;
+    scale: 0;
     h5 {
       font-weight: 200;
       font-size: 1.2vw;
@@ -96,9 +97,8 @@ body {
   bottom: -7vw;
 }
 
-#page2{
-    height: 100vh;
-    width: 100%;
-    background-color: wheat;
-
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background-color: wheat;
 }
