@@ -132,3 +132,46 @@ function menuAnimation() {
   });
 }
 menuAnimation();
+
+function cursorAnimation2() {
+  var page5 = document.querySelector("#page5");
+
+  var cursor = document.querySelector("#cursor2");
+
+  page5.addEventListener("mousemove", function (dets) {
+    gsap.to(cursor, {
+      x: dets.x - 750,
+      y: dets.y - 450,
+    });
+  });
+
+  page5.addEventListener("mouseenter", function () {
+    gsap.to(cursor, {
+      opacity: 1,
+      scale: 1,
+    });
+  });
+
+  page5.addEventListener("mouseleave", function () {
+    gsap.to(cursor, {
+      opacity: 0,
+      scale: 0,
+    });
+  });
+}
+cursorAnimation2();
+
+function svgAnimation() {
+  gsap.to("#svg1", {
+    scrollTrigger: {
+      scroller: "#main",
+      trigger: "#page5",
+      start: "top 10%",
+      end: "bottom center",
+      // markers: true,
+      once: true,
+      onEnter: () => gsap.to("#svg1", { rotation: 250, duration: 1.2 }),
+    },
+  });
+}
+svgAnimation();
