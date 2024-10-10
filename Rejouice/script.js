@@ -175,3 +175,20 @@ function svgAnimation() {
   });
 }
 svgAnimation();
+
+function swiper() {
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 5,          // Number of visible slides
+    spaceBetween: 10,          // Space between slides
+    loop: true,                // Infinite loop mode
+    speed: 4000,               // Speed of transition (2 seconds for smooth sliding)
+    loopedSlides: 5,           // Number of slides to loop (same as slidesPerView)
+    autoplay: {
+      delay: -10,                // Minimum delay to ensure continuous autoplay (1ms)
+      disableOnInteraction: false, // Prevent pause on interaction
+    },
+  });
+}
+
+swiper();
+

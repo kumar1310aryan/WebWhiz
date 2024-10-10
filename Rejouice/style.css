@@ -39,8 +39,6 @@ body {
   overflow: hidden; */
 }
 
-
-
 #nav h2 {
   font-weight: 500;
   font-size: 1.3vw;
@@ -48,10 +46,9 @@ body {
   transition: all 0.3s ease;
 }
 
-#nav h2:hover{
+#nav h2:hover {
   cursor: pointer;
   text-decoration: underline;
-  
 }
 
 #full-scr-nav {
@@ -77,7 +74,7 @@ body {
       font-size: 1.3vw;
     }
 
-    h4:hover{
+    h4:hover {
       text-decoration: underline;
       cursor: pointer;
     }
@@ -441,7 +438,7 @@ video {
   object-fit: cover;
 }
 
-#page5 #cursor2{
+#page5 #cursor2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,22 +450,21 @@ video {
   position: absolute;
   z-index: 999;
   opacity: 0;
-  
-  
-  h5{
+
+  h5 {
     font-weight: 500;
     font-size: 1vw;
   }
 }
 
-#page5 svg{
+#page5 svg {
   position: absolute;
   height: 60%;
   width: 60%;
   margin-left: 2vw;
 }
 
-#seat-available{
+#seat-available {
   position: absolute;
   display: flex;
   align-items: center;
@@ -476,16 +472,15 @@ video {
   flex-direction: column;
   color: #fff;
 
-  h1{
+  h1 {
     font-size: 4.5vw;
     font-weight: 500;
   }
-  h3{
+  h3 {
     font-weight: 500;
     font-size: 2vw;
   }
 }
-
 
 #page6 {
   min-height: 85vh;
@@ -519,4 +514,61 @@ video {
     font-size: 3.6vw;
     line-height: 4vw;
   }
+}
+
+#page7 {
+  min-height: 100vh;
+  width: 96%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 1vw;
+  margin-left: 2%;
+}
+
+#page7-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 4vw;
+
+  h1 {
+    font-family: "Headline";
+    font-size: 7vw;
+    font-weight: 500;
+  }
+
+  a {
+    font-size: 1.4vw;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 48vh;
+  position: relative;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+.swiper-slide img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+}
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
 }
