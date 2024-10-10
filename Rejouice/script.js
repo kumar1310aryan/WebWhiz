@@ -68,7 +68,7 @@ function cursorAnimation() {
 cursorAnimation();
 
 function navColor() {
-  gsap.to("#nav a", {
+  gsap.to("#nav h2", {
     color: "black",
     scrollTrigger: {
       scroller: "#main",
@@ -77,13 +77,58 @@ function navColor() {
       start: "top 5%",
       end: "top 5%",
       onLeave: () => {
-        gsap.to("#nav a", { color: "black" });
+        gsap.to("#nav h2", { color: "black" });
       },
       onEnterBack: () => {
-        gsap.to("#nav a", { color: "white" });
+        gsap.to("#nav h2", { color: "white" });
       },
     },
   });
 }
 navColor();
 
+function menuAnimation() {
+  const h2Elements = document.querySelectorAll("#nav h2");
+  const menu = h2Elements[1];
+
+  const fullNav = document.querySelector("#full-scr-nav");
+  const close = document.querySelector("#rejouice h4");
+
+  const navContent = document.querySelector("#nav-content");
+  const navBottom = document.querySelector("#fullnav-bottom");
+  const video = document.querySelector("#nav-video video");
+
+  const openNavTimeline = gsap.timeline({ paused: true, reversed: true });
+
+  openNavTimeline
+    .set(fullNav, { top: "-100%" })
+    .to(fullNav, { top: "0%", duration: 0.5, ease: "power2.out" })
+    .from(
+      navContent,
+      {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        ease: "power2.out",
+        delay: 0.8,
+      },
+      "-=0.3"
+    )
+    .from(
+      navBottom,
+      { opacity: 0, y: 30, duration: 0.5, ease: "power2.out" },
+      "-=0.3"
+    )
+    .from(video, { opacity: 0, duration: 0.5, ease: "power2.out" }, "-=0.3");
+
+  menu.addEventListener("click", function () {
+    if (openNavTimeline.reversed()) {
+      openNavTimeline.play();
+    }
+  });
+
+  close.addEventListener("click", function () {
+    openNavTimeline.reverse();
+  });
+}
+menuAnimation();
