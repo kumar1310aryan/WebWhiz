@@ -39,8 +39,6 @@ function locomotiveScroll() {
 }
 locomotiveScroll();
 
-
-
 function cursorAnimation() {
   var mainContent = document.querySelector("#main-content");
 
@@ -48,8 +46,8 @@ function cursorAnimation() {
 
   mainContent.addEventListener("mousemove", function (dets) {
     gsap.to(cursor, {
-      x: dets.x - 700,
-      y: dets.y,
+      x: dets.x - 720,
+      y: dets.y - 710,
     });
   });
 
@@ -68,4 +66,24 @@ function cursorAnimation() {
   });
 }
 cursorAnimation();
+
+function navColor() {
+  gsap.to("#nav a", {
+    color: "black",
+    scrollTrigger: {
+      scroller: "#main",
+      trigger: "#page2",
+      // markers: true,
+      start: "top 5%",
+      end: "top 5%",
+      onLeave: () => {
+        gsap.to("#nav a", { color: "black" });
+      },
+      onEnterBack: () => {
+        gsap.to("#nav a", { color: "white" });
+      },
+    },
+  });
+}
+navColor();
 
