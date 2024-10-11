@@ -208,7 +208,7 @@ body {
 #main-content {
   width: 100%;
   height: 100%;
-  background-color: #00000021;
+  overflow: hidden;
   position: relative;
   z-index: 5;
   display: flex;
@@ -225,7 +225,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffffd6;
+    color: #ffffff;
     position: absolute;
     scale: 0;
     h5 {
@@ -240,7 +240,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  z-index: 3;
+  z-index: 12;
   font-family: "Headline";
   font-size: 25vw;
   font-weight: 400;
@@ -265,7 +265,19 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  z-index: 11;
 }
+
+#overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  opacity: 1;
+}
+
 
 #page2 {
   min-height: 100vh;
@@ -592,7 +604,7 @@ video {
 }
 
 #page8 {
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.697);
   margin-top: 1vw;
@@ -610,6 +622,7 @@ video {
   margin-bottom: 10vw;
   position: absolute;
   margin-top: -2px;
+  z-index: 10;
 
   h4 {
     font-weight: 500;
@@ -626,16 +639,18 @@ video {
 }
 
 #bottom-menu {
-  height: 55vh;
+  
+  min-height: 62vh;
   width: 100%;
   background-color: #000000;
-  position: absolute;
-  top: 45vh;
+  position: relative;
+  top: 40%;
   color: #fff;
   padding: 2vw;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  z-index: 9;
 }
 
 #bottom-menu-top{
