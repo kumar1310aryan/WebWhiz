@@ -449,3 +449,44 @@ function footerAnimation() {
   });
 }
 footerAnimation();
+
+function animateSeatNumber() {
+  const seatNumber = document.getElementById("seat-number");
+  let currentValue = 17;
+
+  // Create a timeline for the animation
+  const tl = gsap.timeline({
+    onComplete: () => {
+      seatNumber.textContent = 1; // Ensure it ends with 1
+    },
+  });
+
+  // Animate the number
+  tl.to(seatNumber, {
+    innerText: 1,
+    duration: 1, 
+    ease: "none",
+    snap: { innerText: 1 }, // Snap to 1 at the end
+    modifiers: {
+      innerText: (value) => {
+        // Decrement currentValue only if it's greater than 1
+        if (currentValue > 1) {
+          return Math.floor(currentValue--);
+        } else {
+          return 1; // Keep returning 1 once it hits
+        }
+      },
+    },
+  });
+}
+
+// Trigger the animation when #page5 enters the viewport
+ScrollTrigger.create({
+  scroller: "#main",
+  trigger: "#page5",
+  start: "top center", // Start when the top of #page5 is at the center of the viewport
+  onEnter: () => {
+    animateSeatNumber(); // Call the animation function
+  },
+  once: true, // Ensures the animation happens only once
+});

@@ -529,15 +529,21 @@ video {
   justify-content: center;
   flex-direction: column;
   color: #fff;
+}
 
-  h1 {
-    font-size: 4.5vw;
-    font-weight: 500;
-  }
-  h3 {
-    font-weight: 500;
-    font-size: 2vw;
-  }
+#seat-available h1 {
+  font-size: 4.5vw;
+  font-weight: 500;
+}
+
+#seat-available h3 {
+  font-weight: 500;
+  font-size: 2vw;
+}
+
+.seat{
+  display: flex;
+  gap: 1vw;
 }
 
 #page6 {
