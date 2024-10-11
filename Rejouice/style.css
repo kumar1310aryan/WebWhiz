@@ -24,6 +24,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: #000;
 }
 
 #nav {
@@ -160,29 +161,29 @@ body {
     border: 1px solid #000000;
     border-radius: 100px;
     /* margin-top: 2vw; */
-    overflow: hidden; 
-    z-index: 1; 
-    transition: color 0.3s ease; 
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
   }
 
   button::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
-    left: -100%; 
+    left: -100%;
     width: 100%;
     height: 100%;
-    background-color: #000000; 
-    transition: left 0.5s ease; 
-    z-index: -1; 
+    background-color: #000000;
+    transition: left 0.5s ease;
+    z-index: -1;
   }
 
   button:hover::before {
-    left: 0; 
+    left: 0;
   }
 
   button:hover {
-    color: #ffffff; 
+    color: #ffffff;
     cursor: pointer;
   }
 }
@@ -216,6 +217,9 @@ body {
     font-size: 1.2vw;
   }
 }
+
+
+
 
 #page1 {
   height: 100vh;
@@ -302,7 +306,6 @@ body {
   z-index: 10;
   opacity: 1;
 }
-
 
 #page2 {
   min-height: 100vh;
@@ -664,7 +667,6 @@ video {
 }
 
 #bottom-menu {
-  
   min-height: 62vh;
   width: 100%;
   background-color: #000000;
@@ -678,7 +680,7 @@ video {
   z-index: 9;
 }
 
-#bottom-menu-top{
+#bottom-menu-top {
   display: flex;
   width: 100%;
 }
@@ -702,33 +704,32 @@ video {
       border: 1px solid #fff;
       border-radius: 100px;
       margin-top: 2vw;
-      overflow: hidden; 
-      z-index: 1; 
-      transition: color 0.3s ease; 
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.3s ease;
     }
-  
+
     button::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
-      left: -100%; 
+      left: -100%;
       width: 100%;
       height: 100%;
-      background-color: #fff; 
-      transition: left 0.5s ease; 
-      z-index: -1; 
+      background-color: #fff;
+      transition: left 0.5s ease;
+      z-index: -1;
     }
-  
+
     button:hover::before {
-      left: 0; 
+      left: 0;
     }
-  
+
     button:hover {
-      color: #000; 
+      color: #000;
       cursor: pointer;
     }
   }
-  
 }
 
 #bottom-menu-right {
@@ -738,32 +739,33 @@ video {
   justify-content: flex-end;
   gap: 8vw;
 
-  #left,#right{
+  #left,
+  #right {
     display: flex;
     flex-direction: column;
 
-    a{
+    a {
       color: #fff;
       text-decoration: none;
     }
   }
 }
 
-#bottom-menu-bottom{
+#bottom-menu-bottom {
   width: 100%;
   display: flex;
   justify-content: space-between;
 
-  #left h3{
+  #left h3 {
     font-weight: 400;
   }
 
-  #right{
+  #right {
     display: flex;
     gap: 8vw;
   }
 
-  #right h3{
+  #right h3 {
     font-weight: 400;
   }
 }
@@ -796,3 +798,31 @@ video {
   justify-content: center;
   color: white;
 }
+
+
+/* loader */
+
+
+
+
+
+
+#loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  background-color: #000000;
+  padding: 25vh 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+
+  h1{
+    font-weight: 500;
+    font-size: 1.6vw;
+    color: #fff;
+  }
+}
+

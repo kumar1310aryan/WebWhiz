@@ -39,6 +39,79 @@ function locomotiveScroll() {
 }
 locomotiveScroll();
 
+function loadingAnimation() {
+  var tl = gsap.timeline();
+
+  tl.from("#loader h1", {
+    x: 200, // Start from the right
+    opacity: 0, // Initially invisible
+    duration: 0.9, // Time for each animation
+    stagger: 0.1, // Delay between each animation
+    ease: "power3.out",
+    delay: 0.3,
+  });
+
+  // Animate the h1 elements to go to the left and fade out with stagger
+  tl.to("#loader h1", {
+    x: -200, // Move to the left
+    opacity: 0, // Fade out
+    duration: 0.7, // Time for each animation
+    stagger: 0.1, // Delay between each animation
+    ease: "power3.in",
+    delay: 0.2, // Delay before this exit animation starts
+  });
+
+  // Fade out the loader with a slight delay
+  tl.to("#loader", {
+    opacity: 0,
+    duration: 0.3,
+    delay: 0.1,
+  });
+
+  // Remove loader display after it's hidden
+  tl.to("#loader", {
+    display: "none",
+  });
+
+  // Smooth fade and scale-in effect for #page1, giving it a more elegant entrance
+  tl.from("#page1", {
+    scale: 0.95,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+  });
+
+  // Fade in the navigation
+  tl.from("#nav", {
+    opacity: 0,
+    duration: 0.5,
+    ease: "power3.out",
+  });
+
+  tl.to("body", {
+    backgroundColor: "white",
+    delay: -1,
+  });
+
+  tl.to("#overlay-image", {
+    duration: 1.5,
+    opacity: 0,
+    delay: 1,
+    onComplete: function () {
+      document.getElementById("overlay-image").style.display = "none";
+    },
+  });
+
+  gsap.from(".blue-background span", {
+    delay: 3.1,
+    y: 400,
+    duration: 1,
+    stagger: 0.1,
+    ease: "power2.out",
+  });
+}
+loadingAnimation();
+
 function menuAnimation() {
   const h2Elements = document.querySelectorAll("#nav h2");
   const menu = h2Elements[1];
@@ -132,25 +205,6 @@ function cursorAnimation() {
   });
 }
 cursorAnimation();
-
-function landingPageAnimation() {
-  gsap.to("#overlay-image", {
-    duration: 1.5,
-    opacity: 0,
-    delay: 1.6,
-    onComplete: function () {
-      document.getElementById("overlay-image").style.display = "none";
-    },
-  });
-
-  gsap.from(".blue-background span", {
-    y: 400,
-    duration: 1,
-    stagger: 0.15,
-    ease: "power2.out",
-  });
-}
-landingPageAnimation();
 
 function page2Animation() {
   gsap.from("#page2-top h2", {
@@ -394,5 +448,4 @@ function footerAnimation() {
     },
   });
 }
-
 footerAnimation();
