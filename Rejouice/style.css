@@ -494,6 +494,7 @@ video {
   height: 60%;
   width: 60%;
   object-fit: cover;
+  z-index: -3;
 }
 
 #page5 #cursor2 {
@@ -506,7 +507,7 @@ video {
   width: 100px;
   color: #fff;
   position: absolute;
-  z-index: 999;
+  z-index: -1;
   opacity: 0;
 
   h5 {
