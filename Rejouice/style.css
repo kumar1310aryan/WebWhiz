@@ -24,7 +24,8 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #000;
+  background-color: #000000;
+  position: relative;
 }
 
 #nav {
@@ -440,6 +441,7 @@ body {
 #img-div:hover video {
   opacity: 1;
   cursor: pointer;
+  z-index: 1111;
 }
 
 #img-div:hover img {
@@ -827,6 +829,7 @@ video {
   gap: 1vw;
 
   h1{
+    opacity: 0;
     font-weight: 500;
     font-size: 1.6vw;
     color: #fff;

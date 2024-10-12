@@ -42,16 +42,21 @@ locomotiveScroll();
 function loadingAnimation() {
   var tl = gsap.timeline();
 
-  tl.from("#loader h1", {
-    x: 200, // Start from the right
-    opacity: 0, // Initially invisible
+  tl.to("#loader h1", {
+    x: 200,
+  });
+
+  // Animate the h1 elements from opacity 0 to 1
+  tl.to("#loader h1", {
+    x: 0, // No horizontal movement in the first step
+    opacity: 1, // Animate to full visibility
     duration: 0.9, // Time for each animation
     stagger: 0.1, // Delay between each animation
     ease: "power3.out",
-    delay: 0.3,
+    delay: 0.3, // Delay before starting the animation
   });
 
-  // Animate the h1 elements to go to the left and fade out with stagger
+  // Animate the h1 elements to fade out and move to the left
   tl.to("#loader h1", {
     x: -200, // Move to the left
     opacity: 0, // Fade out
@@ -103,7 +108,7 @@ function loadingAnimation() {
   });
 
   gsap.from(".blue-background span", {
-    delay: 3.1,
+    delay: 3.3,
     y: 400,
     duration: 1,
     stagger: 0.1,
@@ -450,44 +455,43 @@ function footerAnimation() {
 }
 footerAnimation();
 
-function animateSeatNumber() {
-  const seatNumber = document.getElementById("seat-number");
-  let currentValue = 17;
-
+function seatNumber(){
+  function animateSeatNumber() {
+    const seatNumber = document.getElementById("seat-number");
+    let currentValue = 17;
   
-  const tl = gsap.timeline({
-    onComplete: () => {
-      seatNumber.textContent = 1; 
-    },
-  });
-
-  
-  tl.to(seatNumber, {
-    innerText: 1,
-    duration: 1, 
-    ease: "none",
-    snap: { innerText: 1 },
-    modifiers: {
-      innerText: (value) => {
-        
-        if (currentValue > 1) {
-          return Math.floor(currentValue--);
-        } else {
-          return 1; 
-        }
+    const tl = gsap.timeline({
+      onComplete: () => {
+        seatNumber.textContent = 1;
       },
+    });
+  
+    tl.to(seatNumber, {
+      innerText: 1,
+      duration: 1,
+      ease: "none",
+      snap: { innerText: 1 },
+      modifiers: {
+        innerText: (value) => {
+          if (currentValue > 1) {
+            return Math.floor(currentValue--);
+          } else {
+            return 1;
+          }
+        },
+      },
+    });
+  }
+  
+  ScrollTrigger.create({
+    // markers:true,
+    scroller: "#main",
+    trigger: "#page5",
+    start: "top 20%",
+    onEnter: () => {
+      animateSeatNumber();
     },
+    once: true,
   });
 }
-
-
-ScrollTrigger.create({
-  // markers:true,
-  scroller: "#main",
-  trigger: "#page5",
-  start: "top 20%", 
-  onEnter: () => {
-    animateSeatNumber(); 
-  },
-  once: true,
-});
+seatNumber();
