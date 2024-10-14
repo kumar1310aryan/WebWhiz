@@ -193,15 +193,15 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-color: #d4c9c9;
-  overflow: hidden;
+  /* overflow-x: hidden; */
   position: relative;
 }
 
 #image-div-2 {
   width: 100%;
-  height: 115vh;
-  margin-top: 8vw;
+  height: 128vh;
   padding: 3vw;
+  padding-top: 11vw;
   display: flex;
   justify-content: space-between;
 
@@ -276,4 +276,19 @@ body {
 #div1x{
   top: 30%;
   left: 35%;
+}
+
+#div3x{
+  top: 89%;
+  left: 3%;
+}
+
+#div2x{
+  left: 60%;
+  top: 50%;
+}
+
+#div6x{
+  left: 90%;
+  top: 95%;
 }
