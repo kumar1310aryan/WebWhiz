@@ -39,8 +39,13 @@ function locomotiveAnimation() {
 }
 locomotiveAnimation();
 
-
 function page1HeadingAnimation() {
+  gsap.from("#nav", {
+    y: -90,
+    duration: 1.2,
+    ease: "power4.ease-in-out",
+  });
+
   gsap.set(".man", {
     transformOrigin: "0% 100%",
     rotationX: -120,
@@ -54,7 +59,7 @@ function page1HeadingAnimation() {
     duration: 0.7,
     ease: "power4.ease-in-out",
     opacity: 1,
-    stagger: 0.2,
+    stagger: 0.15,
   });
 }
 page1HeadingAnimation();

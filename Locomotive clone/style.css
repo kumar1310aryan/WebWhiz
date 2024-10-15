@@ -70,8 +70,18 @@ body {
   color: #fff;
 }
 
-#heading h1:nth-child(3) {
-  color: #fff;
+#v4x {
+  display: flex;
+ 
+
+  h1 {
+    color: #fff;
+    position: relative;
+  }
+
+  #four {
+    top: -10%;
+  }
 }
 
 #index {
@@ -109,12 +119,18 @@ body {
   align-items: center;
   margin-top: -0.6vw;
   justify-content: space-between;
+  transition: all ease 0.3s;
 
   h1 {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.7vw;
   }
+}
+
+.numbers:hover {
+  color: #fff;
+  cursor: pointer;
 }
 
 #page2 {
