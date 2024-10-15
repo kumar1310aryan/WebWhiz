@@ -38,3 +38,23 @@ function locomotiveAnimation() {
   ScrollTrigger.refresh();
 }
 locomotiveAnimation();
+
+
+function page1HeadingAnimation() {
+  gsap.set(".man", {
+    transformOrigin: "0% 100%",
+    rotationX: -120,
+    y: 150,
+    opacity: 0,
+  });
+
+  gsap.to(".man", {
+    rotationX: 0,
+    y: 0,
+    duration: 0.7,
+    ease: "power4.ease-in-out",
+    opacity: 1,
+    stagger: 0.2,
+  });
+}
+page1HeadingAnimation();

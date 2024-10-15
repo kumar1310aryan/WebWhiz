@@ -54,6 +54,7 @@ body {
   width: 100%;
   height: calc(100vh - 4vw);
   padding: 5vw 3.2vw;
+  perspective: 1000px;
 
   h1 {
     text-transform: uppercase;
