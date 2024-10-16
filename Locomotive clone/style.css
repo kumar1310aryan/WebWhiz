@@ -91,7 +91,6 @@ body {
   #ex {
     top: -3vw;
     left: 19vw;
-
   }
 
   #four {
@@ -188,6 +187,7 @@ body {
     height: 100%;
     width: 57%;
     position: relative;
+    overflow: hidden;
 
     #x4 {
       position: absolute;
@@ -197,7 +197,7 @@ body {
       color: #fff;
       font-size: 1.8vw;
       top: 25%;
-      left: 100%;
+      left: 80%;
       border-radius: 60% 40%;
       display: flex;
       align-items: center;
@@ -208,9 +208,9 @@ body {
     #x2 {
       position: absolute;
       color: #fff;
-      top: 88%;
-      left: 50%;
-      transform: translate(-50%, 0);
+      top: 80%;
+      left: 45%;
+      transform: translate(-50%, -50%);
       font-size: 1vw;
     }
 
@@ -237,11 +237,13 @@ body {
   padding-top: 11vw;
   display: flex;
   justify-content: space-between;
+  /* overflow: hidden; */
 
   #left {
     height: 100%;
     width: 37%;
     position: relative;
+    overflow: hidden;
 
     img {
       height: 100%;
@@ -253,9 +255,9 @@ body {
     #x4 {
       position: absolute;
       color: #fff;
-      top: 88%;
-      left: 50%;
-      transform: translate(-50%, 0);
+      top: 70%;
+      left: 35%;
+      transform: translate(-50%, -50%);
       font-size: 1vw;
     }
   }
@@ -276,9 +278,9 @@ body {
     #x6 {
       position: absolute;
       color: #fff;
-      top: 75%;
-      left: 50%;
-      transform: translate(-50%, 0);
+      top: 60%;
+      left: 40%;
+      transform: translate(-50%, -50%);
       font-size: 1vw;
     }
   }
@@ -304,13 +306,13 @@ body {
 }
 
 #div3x {
-  top: 89%;
+  top: 80%;
   left: 3%;
 }
 
 #div2x {
   left: 60%;
-  top: 50%;
+  top: 60%;
 }
 
 #div6x {
