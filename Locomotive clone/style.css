@@ -72,15 +72,31 @@ body {
 
 #v4x {
   display: flex;
- 
+  position: relative;
 
   h1 {
     color: #fff;
-    position: relative;
+    position: absolute;
+  }
+
+  #vee {
+    top: -1.5vw;
+  }
+
+  #dot {
+    /* top: 3vw; */
+    left: 16vw;
+  }
+
+  #ex {
+    top: -3vw;
+    left: 19vw;
+
   }
 
   #four {
-    top: -10%;
+    top: -5vw;
+    left: 8vw;
   }
 }
 
