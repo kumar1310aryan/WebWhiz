@@ -19,12 +19,12 @@ body {
 #main {
   overflow: hidden;
   position: relative;
+  background-color: #d4c9c9;
 }
 
 #page1 {
   width: 100vw;
   min-height: 100vh;
-  background-color: #d4c9c9;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -152,7 +152,7 @@ body {
 #page2 {
   width: 100vw;
   min-height: 100vh;
-  background-color: #d4c9c9;
+  /* background-color: #d4c9c9; */
   overflow: hidden;
 }
 
@@ -226,7 +226,7 @@ body {
 #page3 {
   width: 100vw;
   min-height: 100vh;
-  background-color: #d4c9c9;
+  /* background-color: #d4c9c9; */
   /* overflow-x: hidden; */
   position: relative;
 }
@@ -324,7 +324,7 @@ body {
 #page4 {
   width: 100vw;
   min-height: 110vh;
-  background-color: #d4c9c9;
+  /* background-color: #d4c9c9; */
   position: relative;
   padding: 0.1px;
 }
@@ -388,14 +388,14 @@ body {
 #page5 {
   width: 100vw;
   min-height: 50vh;
-  background-color: #d4c9c9;
+  /* background-color: #d4c9c9; */
   overflow: hidden;
 }
 
 #page6 {
   width: 100vw;
   height: 100vh;
-  background-color: #d4c9c9;
+  /* background-color: #d4c9c9; */
   display: flex;
 }
 
@@ -451,7 +451,7 @@ body {
 #page7 {
   height: 100vh;
   width: 100%;
-  background-color: #d4c9c9;
+  background-color: #cdd4c9;
   padding: 0.1px;
   padding-left: 42%;
   padding-top: 10vw;
@@ -460,7 +460,7 @@ body {
 #page8 {
   height: 140vh;
   width: 100%;
-  background-color: #d4c9c9;
+  background-color: #cdd4c9;
   display: flex;
   padding-top: 40vh;
   padding-left: 3vw;
@@ -498,7 +498,7 @@ body {
 #page9 {
   width: 100%;
   height: 125vh;
-  background-color: #d4c9c9;
+  background-color: #cdd4c9;
   padding-left: 3vw;
   padding-top: 30vh;
   overflow: hidden;
@@ -526,16 +526,32 @@ body {
 
 #page10,
 #page11,
-#page12 {
+#page12,
+#pageY,
+#pageZ,
+#pageZ2,
+#pageZ3 {
   height: 100vh;
   width: 100%;
-  background-color: #d4c9c9;
+}
+
+#pageY h1,
+#page12 h1 {
+  font-size: 8vw;
+  position: relative;
+  left: -10vw;
+}
+
+#pageZ h1 {
+  font-size: 8vw;
+  position: relative;
+  /* left: 90vw; */
 }
 
 #page13 {
   height: 100vh;
   width: 100%;
-  background-color: #d4c9c9;
+  /* background-color: #d4c9c9; */
   padding-left: 3vw;
 
   h1 {
@@ -549,4 +565,8 @@ body {
 
 #page13 h1:nth-child(4) {
   color: #fff;
+}
+
+h3{
+  color: #aca3af;
 }

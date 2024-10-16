@@ -42,6 +42,7 @@ locomotiveAnimation();
 function page1HeadingAnimation() {
   gsap.from("#nav", {
     y: -90,
+    delay: 0.8,
     duration: 1.2,
     ease: "power4.ease-in-out",
   });
@@ -60,6 +61,7 @@ function page1HeadingAnimation() {
     ease: "power4.ease-in-out",
     opacity: 1,
     stagger: 0.15,
+    delay: 1.5,
   });
 }
 page1HeadingAnimation();
@@ -113,3 +115,85 @@ function imagePin() {
   });
 }
 imagePin();
+
+function vehicleAnimation() {
+  gsap.to("#page12 h1", {
+    x: 1600,
+    y: 1600,
+    rotate: 35,
+    scrollTrigger: {
+      trigger: "#page11",
+      scroller: "#main",
+      start: "top -100%",
+      end: "top -200%",
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  gsap.set("#pageZ h1", {
+    x: 1500,
+  });
+
+  gsap.to("#pageZ h1", {
+    x: -150,
+    y: 1800,
+    scrollTrigger: {
+      trigger: "#pageZ",
+      scroller: "#main",
+      start: "top",
+      end: "top -200%",
+      scrub: true,
+      // markers: true,
+    },
+  });
+}
+vehicleAnimation();
+
+function backgroundColorChange() {
+  gsap.to("#main", {
+    backgroundColor: "#c7c7c9",
+    scrollTrigger: {
+      trigger: "#page2",
+      scroller: "#main",
+      start: "top",
+      scrub: 5,
+      // markers: true,
+    },
+  });
+
+  gsap.to("#main", {
+    backgroundColor: "#c7c7c9",
+    scrollTrigger: {
+      trigger: "#page2",
+      scroller: "#main",
+      start: "top",
+      scrub: 5,
+      // markers: true,
+    },
+  });
+
+  gsap.to("#main", {
+    backgroundColor: "#cdd4c9",
+    scrollTrigger: {
+      trigger: "#page3",
+      scroller: "#main",
+      start: "top",
+      scrub: 5,
+      // markers: true,
+    },
+  });
+
+  gsap.to("#main", {
+    backgroundColor: "#d4c9c9",
+    scrollTrigger: {
+      trigger: "#pageZ",
+      scroller: "#main",
+      start: "top center",
+      end: "bottom center",
+      scrub: 5,
+      // markers: true,
+    },
+  });
+}
+backgroundColorChange();
