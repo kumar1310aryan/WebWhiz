@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP ScrollTrigger Pin Example</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #main {
+        overflow: auto; /* Enable scrolling */
+      }
+
+      #page8 {
+        display: flex; /* Align left and right content */
+        height: 100vh; /* Full viewport height */
+        position: relative; /* Relative for child positioning */
+        background-color: #f0f0f0; /* Example background color */
+      }
+
+      #page8-left {
+        flex: 1; /* Takes up space on the left */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center text vertically */
+        padding: 20px; /* Add some padding */
+      }
+
+      #page8-right {
+        flex: 1; /* Takes up space on the right */
+        position: relative; /* Position relative for the image */
+      }
+
+      #page8-right img {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Cover the container */
+      }
+
+      /* Additional style for the next section */
+      #next-section {
+        height: 200vh; /* Height to allow scrolling */
+        background-color: #c0c0c0; /* Color for the next section */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="page8">
+        <div id="page8-left">
+          <h1>04.</h1>
+          <h1>Fixed elements</h1>
+          <p>
+            Create slides that stick and untick to the viewport while scrolling
+            through.
+          </p>
+        </div>
+        <div id="page8-right">
+          <img src="./Assets/locomotive04.jpg" alt="Pinned Image" />
+        </div>
+      </div>
+      <div id="next-section">Scroll Down to See the Effect!</div>
+    </div>
+
+    <!-- Include GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+    <script>
+      // Register the ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Create a timeline for the scroll effect
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#page8", // The section to pin
+          start: "top top", // Start when the top of the section hits the top of the viewport
+          end: "+=2000", // Duration of the pin (adjust as needed)
+          pin: true, // Pin the section
+          pinSpacing: false, // Don't add space after the pin
+          scrub: 1, // Smoothly scrub through the animation
+        },
+      });
+
+      // Add any additional animations to the timeline if needed
+      tl.to("#page8-left", { opacity: 1, duration: 1 }); // Example fade-in for left content
+    </script>
+  </body>
+</html>

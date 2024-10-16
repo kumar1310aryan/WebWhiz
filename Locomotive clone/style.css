@@ -18,6 +18,7 @@ body {
 
 #main {
   overflow: hidden;
+  position: relative;
 }
 
 #page1 {
@@ -355,7 +356,6 @@ body {
   white-space: nowrap;
   letter-spacing: 1.5;
   position: absolute;
-  /* letter-spacing: 0.3vw; */
 }
 
 #moving-one {
@@ -428,6 +428,7 @@ body {
   align-items: center;
   margin-bottom: 40vh;
   margin-top: 5vw;
+  perspective: 1000px;
 
   h1 {
     text-transform: uppercase;
@@ -464,6 +465,7 @@ body {
   padding-top: 40vh;
   padding-left: 3vw;
   padding-right: 3vw;
+  position: relative;
 }
 
 #page8-left {
@@ -485,6 +487,7 @@ body {
 #page8-right {
   height: 100%;
   width: 57%;
+  position: relative;
   img {
     width: 100%;
     height: 100%;
@@ -498,6 +501,9 @@ body {
   background-color: #d4c9c9;
   padding-left: 3vw;
   padding-top: 30vh;
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
 
   h1 {
     font-size: 14vw;
@@ -519,13 +525,14 @@ body {
 }
 
 #page10,
-#page11 {
+#page11,
+#page12 {
   height: 100vh;
   width: 100%;
   background-color: #d4c9c9;
 }
 
-#page12 {
+#page13 {
   height: 100vh;
   width: 100%;
   background-color: #d4c9c9;
@@ -540,6 +547,6 @@ body {
   }
 }
 
-#page12 h1:nth-child(4) {
+#page13 h1:nth-child(4) {
   color: #fff;
 }

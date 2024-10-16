@@ -63,3 +63,53 @@ function page1HeadingAnimation() {
   });
 }
 page1HeadingAnimation();
+
+function scrollDirectionAnimation() {
+  ScrollTrigger.create({
+    trigger: "#page4",
+    start: "top",
+    end: "+=300",
+    pin: true,
+    scrub: true,
+    scroller: "#main",
+    // markers: true,
+  });
+
+  const movingElements = gsap.utils.toArray(".moving");
+
+  movingElements.forEach((element, index) => {
+    gsap.fromTo(
+      element,
+      { x: index % 2 === 0 ? "-100%" : "130%" },
+      {
+        x: 0,
+        duration: 2.5,
+        ease: "none",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 30%",
+          end: "+=500",
+          scrub: 3,
+          scroller: "#main",
+        },
+      }
+    );
+  });
+}
+scrollDirectionAnimation();
+
+function imagePin() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#page8",
+      // markers: "true",
+      scroller: "#main",
+      start: "top -40%",
+      end: "+=800",
+      pin: true,
+      pinSpacing: false,
+      scrub: 1,
+    },
+  });
+}
+imagePin();
