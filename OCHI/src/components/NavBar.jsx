@@ -32,12 +32,12 @@ function NavBar() {
         </svg>
       </div>
       <div className="links flex gap-10 capitalize">
-        {["Services", "Our Work", "About Us", "Insights", "contact"].map(
+        {["Services", "Our Work", "About Us", "Insights", "contact us"].map(
           (item, index) => (
             <a
               key={index}
               className={`text-lg font-light capitalize ${
-                index === 4 && "ml-32"
+                index === 4 && "ml-48"
               }`}
               href=""
             >
