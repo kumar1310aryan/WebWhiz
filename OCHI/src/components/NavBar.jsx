@@ -1,6 +1,6 @@
 function NavBar() {
   return (
-    <div className="w-full px-20 py-8 font-['Neue Montreal'] flex justify-between items-center">
+    <div className="fixed z-[1000] w-full px-20 py-8 font-['Neue Montreal'] flex justify-between items-center">
       <div className="logo">
         <svg
           width="72"
@@ -32,11 +32,19 @@ function NavBar() {
         </svg>
       </div>
       <div className="links flex gap-10 capitalize">
-        {["Services", "Our Work", "About Us", "Insights","contact"].map((item, index) => (
-          <a key={index} className="text-md font-light" href="">
-            {item}
-          </a>
-        ))}
+        {["Services", "Our Work", "About Us", "Insights", "contact"].map(
+          (item, index) => (
+            <a
+              key={index}
+              className={`text-lg font-light capitalize ${
+                index === 4 && "ml-32"
+              }`}
+              href=""
+            >
+              {item}
+            </a>
+          )
+        )}
       </div>
     </div>
   );
