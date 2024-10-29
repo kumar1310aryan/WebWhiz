@@ -1,4 +1,5 @@
 import { FaArrowUp } from "react-icons/fa6";
+import "./LandingPage.css";
 function LandingPage() {
   return (
     <div className="w-full h-screen bg-zinc-900 pt-1">
@@ -37,11 +38,14 @@ function LandingPage() {
         })}
 
         <div className="start flex items-center gap-1">
-          <div className="px-4 py-1 border-[2px] border-zinc-600 rounded-full uppercase flex items-center justify-center">
-            start the project
+          <div className="px-4 py-1 border-[2px] border-zinc-600 rounded-full uppercase flex items-center justify-center relative overflow-hidden wave-hover-effect hover:text-black transition-colors duration-300 hover:cursor-pointer">
+            <span className="relative z-10 text-white hover:text-black">
+              start the project
+            </span>
           </div>
-          <div className="px-2 py-2 border-[2px] border-zinc-600 rounded-full items-center justify-center">
-            <FaArrowUp className="rotate-45" />
+
+          <div className="px-2 py-2 border-[2px] border-zinc-600 rounded-full items-center justify-center relative overflow-hidden icon-wave-hover-effect transition-colors duration-300">
+            <FaArrowUp className="rotate-45 relative z-10 text-white hover:text-black hover:cursor-pointer" />
           </div>
         </div>
       </div>

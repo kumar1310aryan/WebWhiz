@@ -1,0 +1,33 @@
+.wave-hover-effect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease;
+    border-radius: inherit; 
+    z-index: 0;
+  }
+  
+  .wave-hover-effect:hover::before {
+    transform: scaleY(1);
+    background-color: #ffffff;
+  }
+  
+  .icon-wave-hover-effect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease;
+    border-radius: inherit; 
+    z-index: 0;
+  }
+  
+  .icon-wave-hover-effect:hover::before {
+    transform: scaleY(1);
+  }
+  
