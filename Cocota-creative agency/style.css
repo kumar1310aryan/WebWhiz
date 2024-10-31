@@ -81,4 +81,20 @@ body {
 #page2 {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #video {
+    width: 95%;
+    height: 98%;
+    overflow: hidden;
+    border-radius: 30px;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
