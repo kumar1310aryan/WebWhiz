@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .circle {
+        width: 15vw;
+        height: 15vw;
+        border: 5px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .eye {
+        width: 3vw;
+        height: 3.5vw;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+      }
+      .left-eye {
+        left: 4vw;
+        top: 3.5vw;
+      }
+      .right-eye {
+        right: 4vw;
+        top: 3.5vw;
+      }
+      .smile {
+        width: 8vw;
+        height: 4vw;
+        border: 4px solid black;
+        border-bottom-left-radius: 8vw;
+        border-bottom-right-radius: 8vw;
+        border-top: none;
+        position: absolute;
+        bottom: 2.5vw;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle">
+      <div class="eye left-eye"></div>
+      <div class="eye right-eye"></div>
+      <div class="smile"></div>
+    </div>
+  </body>
+</html>
