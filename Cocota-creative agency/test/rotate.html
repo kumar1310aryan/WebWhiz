@@ -29,16 +29,21 @@
         height: 3.5vw;
         background-color: black;
         border-radius: 50%;
-        position: absolute;
       }
-      .left-eye {
-        left: 4vw;
-        top: 3.5vw;
+
+      #rectangle {
+        /* background-color: pink; */
+        height: 4vw;
+        width: fit-content;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5vw;
+        top: -2vw;
       }
-      .right-eye {
-        right: 4vw;
-        top: 3.5vw;
-      }
+
       .smile {
         width: 8vw;
         height: 4vw;
@@ -61,6 +66,7 @@
         align-items: center;
         justify-content: center;
         gap: 2px;
+        opacity: 0;
       }
       #idio {
         width: 48%;
@@ -87,8 +93,10 @@
   </head>
   <body>
     <div class="circle">
-      <div class="eye left-eye"></div>
-      <div class="eye right-eye"></div>
+      <div id="rectangle">
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+      </div>
       <div class="smile"></div>
     </div>
     <div id="idiotica">
@@ -101,10 +109,35 @@
     <script>
       // Animate the circle with GSAP
       const tl = gsap.timeline();
+
       tl.fromTo(
         ".circle",
         { x: "-100vw", rotation: -720 },
         { x: "0vw", rotation: 0, duration: 3, ease: "power2.out" }
+      );
+
+      tl.to(".right-eye", {
+        height: "2px",
+      });
+
+      tl.to(".right-eye", {
+        height: "3.5vw",
+      });
+
+      tl.fromTo(
+        "#idiotica",
+        {
+          opacity: 0,
+          scale: 0.5,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
       );
     </script>
   </body>

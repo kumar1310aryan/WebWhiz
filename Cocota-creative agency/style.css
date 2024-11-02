@@ -100,7 +100,7 @@ body {
 }
 
 #page3 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding: 8vw 2vw;
 
@@ -121,5 +121,84 @@ body {
     font-size: 3.7vw;
     font-weight: 400;
     margin-top: 5vw;
+  }
+
+  #branding-design {
+    width: 100%;
+    height: 24vw;
+    /* background-color: pink; */
+    margin-top: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5%;
+
+    #branding {
+      width: 49.5%;
+      height: 100%;
+      background-color: rgba(255, 0, 0, 0.904);
+      border-radius: 25px;
+
+      .branding-top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 0;
+        padding: 0 1.5vw;
+        color: #fff;
+        
+        h1{
+          font-size: 4vw;
+          margin-top: 2vw;
+        }
+      }
+
+      .arrow{
+        height: 5vw;
+        width: 5vw;
+        background-color: #fff;
+        color: #000;
+        border-radius: 50%;
+        margin-top: 2vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    #design {
+      width: 49.5%;
+      height: 100%;
+      background-color: rgba(0, 0, 255, 0.909);
+      border-radius: 25px;
+
+      .design-top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 0;
+        padding: 0 1.5vw;
+        color: #fff;
+        
+        h1{
+          font-size: 4vw;
+          margin-top: 2vw;
+        }
+      }
+
+      .arrow{
+        height: 5vw;
+        width: 5vw;
+        background-color: #fff;
+        color: #000;
+        border-radius: 50%;
+        margin-top: 2vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 }
