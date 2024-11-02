@@ -138,6 +138,9 @@ body {
       height: 100%;
       background-color: rgba(255, 0, 0, 0.904);
       border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       .branding-top {
         width: 100%;
@@ -147,14 +150,20 @@ body {
         line-height: 0;
         padding: 0 1.5vw;
         color: #fff;
-        
-        h1{
+
+        h1 {
           font-size: 4vw;
           margin-top: 2vw;
         }
       }
 
-      .arrow{
+      #branding-bottom {
+        color: #fff;
+        font-size: 1.5vw;
+        padding: 1.5vw;
+      }
+
+      .arrow {
         height: 5vw;
         width: 5vw;
         background-color: #fff;
@@ -172,6 +181,9 @@ body {
       height: 100%;
       background-color: rgba(0, 0, 255, 0.909);
       border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       .design-top {
         width: 100%;
@@ -181,14 +193,20 @@ body {
         line-height: 0;
         padding: 0 1.5vw;
         color: #fff;
-        
-        h1{
+
+        h1 {
           font-size: 4vw;
           margin-top: 2vw;
         }
       }
 
-      .arrow{
+      #design-bottom {
+        color: #fff;
+        font-size: 1.5vw;
+        padding: 1.5vw;
+      }
+
+      .arrow {
         height: 5vw;
         width: 5vw;
         background-color: #fff;
@@ -200,5 +218,63 @@ body {
         justify-content: center;
       }
     }
+  }
+
+  #discover {
+    width: 100%;
+    height: 20vw;
+    margin-top: 5vw;
+    display: flex;
+    justify-content: space-between;
+
+    #discover-left {
+      width: 50%;
+      height: 100%;
+    }
+    #discover-right {
+      width: 50%;
+      height: 100%;
+
+      #text {
+        margin-top: 5vw;
+        margin-left: 1vw;
+        width: 50%;
+        font-size: 1.4vw;
+        line-height: 1.2;
+      }
+
+      #discover-work {
+        text-transform: uppercase;
+        font-size: 1.5vw;
+        text-decoration: underline;
+        margin-top: 3vw;
+        margin-left: 1vw;
+        width: fit-content;
+        height: 1.6vw;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        div {
+          transition: all ease 0.3s;
+        }
+      }
+    }
+  }
+}
+
+#discover-work:hover div {
+  cursor: pointer;
+  transform: translate(0, -50%);
+}
+
+#page4 {
+  width: 100vw;
+  height: 100vh;
+  padding: 0 2vw;
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #000;
   }
 }
