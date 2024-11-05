@@ -516,4 +516,30 @@ body {
       font-weight: 500;
     }
   }
+
+  #categories {
+    width: 100%;
+    margin-top: 6vw;
+    display: flex;
+    gap: 0.5vw;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #000;
+    margin-top:1.5vw;
+  }
+}
+
+.category {
+  padding: 0.5vw 1vw;
+  border-radius: 25px;
+  font-size: 1.4vw;
+  color: grey;
+}
+
+.category:nth-child(1) {
+  border: 1px solid black;
+  color: #000;
 }
