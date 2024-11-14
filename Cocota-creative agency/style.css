@@ -791,7 +791,7 @@ body {
   }
   #content {
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     padding: 0 1vw;
     display: flex;
 
@@ -831,6 +831,103 @@ body {
       height: 100%;
       display: flex;
       gap: 1.5vw;
+      /* background-color: pink; */
+
+      #left,
+      #right {
+        width: 50%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        color: #000;
+
+        #top {
+          width: 110%;
+          height: 20%;
+          display: flex;
+          justify-content: space-between;
+
+          h2 {
+            padding: 1vw;
+            font-weight: 500;
+            font-size: 2.5vw;
+          }
+
+          #arrow {
+            height: 5vw;
+            width: 5vw;
+            background-color: #000;
+            border-radius: 50%;
+            margin-top: 0.5vw;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+              color: #fff;
+              font-size: 3vw;
+              position: relative;
+              top: -4.3vw;
+            }
+          }
+        }
+      }
+
+      #right {
+        width: 48%;
+      }
+    }
+  }
+}
+
+#footer {
+  #bottom {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    margin-top: 4vw;
+
+    .bottom-div {
+      width: 16%;
+      height: 100%;
+      border-top: 0.4px solid #ffffffe8;
+      color: #fff;
+
+      h3 {
+        margin-top: 1vw;
+        font-size: 1.2vw;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      h4 {
+        font-weight: 400;
+        color: rgb(153, 150, 150);
+        margin-top: 0.5vw;
+      }
+      h5 {
+        font-weight: 400;
+        color: rgb(153, 150, 150);
+        margin-top: 1vw;
+        font-size: 1vw;
+      }
+    }
+
+    #right {
+      width: 30%;
+      height: 100%;
+      /* background-color: green; */
+      border-top: 0.5px solid #fff;
+      h4 {
+        font-weight: 400;
+        color: rgb(153, 150, 150);
+        margin-top: 1vw;
+        font-size: 1vw;
+      }
     }
   }
 }
