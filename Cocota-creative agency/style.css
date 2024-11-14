@@ -66,6 +66,83 @@ body {
   }
 }
 
+.heading:nth-child(1) {
+  display: flex;
+
+  #man {
+    height: 10vw;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 5.5vw;
+    top: -0.5vw;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      position: relative;
+      left: 3vw;
+    }
+  }
+  #dot {
+    height: 0.7vw;
+    width: 0.7vw;
+    background-color: rgba(113, 222, 98, 0.891);
+    border-radius: 50%;
+    position: relative;
+    top: 1.9vw;
+    left: 3.5vw;
+    transition: height 0.3s ease, width 0.3s ease;
+  }
+
+  #dot-content {
+    height: 6vw;
+    width: 9.2vw;
+    background-color: rgba(113, 222, 98, 0.891);
+    border-radius: 10px;
+    position: relative;
+    top: -3.8vw;
+    left: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121212;
+    padding: 0 0.1vw;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: all 0.3s ease;
+  }
+}
+
+#man:hover {
+  cursor: pointer;
+}
+
+#man:hover + #dot {
+  height: 1vw;
+  width: 1vw;
+}
+
+#man:hover + #dot + #dot-content {
+  transform: scale(1);
+}
+
+#man {
+  background-size: cover;
+  background-image: url("./assets/AnaNMusica_Sprite.png.webp");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: exerciseAnimation 1.2s steps(5) infinite;
+}
+
+@keyframes exerciseAnimation {
+  100% {
+    background-position: -99vw 0;
+  }
+}
+
 .heading:nth-child(2) {
   display: flex;
   align-items: center;
