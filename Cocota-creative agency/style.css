@@ -89,7 +89,7 @@ body {
   #dot {
     height: 0.7vw;
     width: 0.7vw;
-    background-color: rgba(113, 222, 98, 0.891);
+    background-color: #9ff870;
     border-radius: 50%;
     position: relative;
     top: 1.9vw;
@@ -100,7 +100,7 @@ body {
   #dot-content {
     height: 6vw;
     width: 9.2vw;
-    background-color: rgba(113, 222, 98, 0.891);
+    background-color: #9ff870;
     border-radius: 10px;
     position: relative;
     top: -3.8vw;
@@ -131,7 +131,7 @@ body {
 
 #man {
   background-size: cover;
-  background-image: url("./assets/AnaNMusica_Sprite.png.webp");
+  background-image: url("./assets/RuPosando_Sprite.png.webp");
   background-repeat: no-repeat;
   background-position: 0 0;
   animation: exerciseAnimation 1.2s steps(5) infinite;
@@ -169,29 +169,29 @@ body {
 #dot2 {
   height: 0.7vw;
   width: 0.7vw;
-  background-color: rgba(113, 222, 98, 0.891);
+  background-color: #9ff870;
   border-radius: 50%;
   position: relative;
-  top: -2.5vw;
-  left: 3.8vw;
+  top: -2vw;
+  left: -1.5vw;
   transition: height 0.3s ease, width 0.3s ease;
 }
 
 #dot-content2 {
-  height: 6vw;
+  height: 5.7vw;
   width: 9.2vw;
-  background-color: rgba(113, 222, 98, 0.891);
+  background-color: #9ff870;
   border-radius: 10px;
   position: relative;
   top: -5.7vw;
-  left: 4.1vw;
+  left: -12vw;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #121212;
   padding: 0 0.2vw;
   transform: scale(0);
-  transform-origin: bottom left;
+  transform-origin: bottom right;
   transition: all 0.3s ease;
   font-size: 1vw;
 }
@@ -211,7 +211,7 @@ body {
 
 #man2 {
   background-size: cover;
-  background-image: url("./assets/AnaNMusica_Sprite.png.webp");
+  background-image: url("./assets/MariolaAnaAnaIpad_Sprite.png.webp");
   background-repeat: no-repeat;
   background-position: 0 0;
   animation: exerciseAnimation2 1.2s steps(5) infinite;
@@ -307,7 +307,7 @@ body {
         h1 {
           font-size: 4vw;
           margin-top: 2vw;
-          transition: text-decoration 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
         }
       }
 

@@ -1,16 +1,16 @@
-// const branding = document.getElementById("branding");
-// const brandingDesign = document.getElementById("branding-design");
-// const design = document.getElementById("design");
+function brandingDesignHoverEffect() {
+  const branding = document.getElementById("branding");
+  const design = document.getElementById("design");
+  const brandingh1 = document.querySelector("#branding h1");
 
-// branding.addEventListener("mouseover", () => {
-//   brandingDesign.style.width = "120vw";
-// });
+  design.addEventListener("mouseenter", () => {
+    branding.style.backgroundColor = "rgb(229, 223, 223)";
+    brandingh1.style.color = "rgb(0, 0, 0)";
+  });
 
-// design.addEventListener("mouseover", () => {
-//   brandingDesign.style.width = "120vw";
-//   design.style.width = "60vw"; // Expand design section as well when hovering over branding section
-// });
-
-// branding.addEventListener("mouseout", () => {
-//   brandingDesign.style.width = ""; // Reset to default when hover ends
-// });
+  design.addEventListener("mouseleave", () => {
+    branding.style.backgroundColor = "rgba(255, 0, 0, 0.904)";
+    brandingh1.style.color = "rgb(255, 255, 255)";
+  });
+}
+brandingDesignHoverEffect();
