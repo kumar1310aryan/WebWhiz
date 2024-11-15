@@ -640,6 +640,83 @@ body {
   transform: translate(0, -150%);
 }
 
+#man4 {
+  height: 10vw;
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 5.5vw;
+  top: -0.5vw;
+  overflow: hidden;
+  position: relative;
+  left: 45vw;
+  top: -2vw;
+
+  img {
+    height: 100%;
+    position: relative;
+    left: 3vw;
+  }
+}
+#dot4 {
+  height: 0.7vw;
+  width: 0.7vw;
+  background-color: #9ff870;
+  border-radius: 50%;
+  position: relative;
+  top: -9vw;
+  left: 37vw;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
+#dot-content4 {
+  height: 5.7vw;
+  width: 9.2vw;
+  background-color: #9ff870;
+  border-radius: 10px;
+  position: relative;
+  top: -10vw;
+  left: 26.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121212;
+  padding: 0 0.2vw;
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: all 0.3s ease;
+  font-size: 1vw;
+}
+
+#man3:hover {
+  cursor: pointer;
+}
+
+#man4:hover + #dot4 {
+  height: 1vw;
+  width: 1vw;
+}
+
+#man4:hover + #dot4 + #dot-content4 {
+  transform: scale(1);
+}
+
+#man4 {
+  background-size: cover;
+  background-image: url("./assets/NatashaPouring_Sprite.png.webp");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: exerciseAnimation4 1s steps(5) infinite;
+}
+
+@keyframes exerciseAnimation4 {
+  100% {
+    background-position: -99vw 0;
+  }
+}
+
 #page5 {
   min-height: 100vh;
   width: 100vw;
