@@ -82,3 +82,19 @@ function newContentScroller() {
 }
 newContentScroller();
 
+function clientsScroller() {
+  document
+    .querySelector("#page7-top #arrow #left")
+    .addEventListener("click", function () {
+      const newDiv = document.querySelector("#clients");
+      newDiv.scrollLeft -= 369;
+    });
+
+  document
+    .querySelector("#page7-top #arrow #right")
+    .addEventListener("click", function () {
+      const newDiv = document.getElementById("clients");
+      newDiv.scrollLeft += 366;
+    });
+}
+clientsScroller();
