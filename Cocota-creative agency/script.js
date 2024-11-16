@@ -14,3 +14,53 @@ function brandingDesignHoverEffect() {
   });
 }
 brandingDesignHoverEffect();
+
+function awardsHoverAnimation() {
+  const awwardsDiv = document.getElementById("awards");
+  const trailContainer = document.getElementById("trail-container");
+
+  const images = [
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-ADG_Laus.png.webp",
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-award-1.png.webp",
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-Awwwards.png.webp",
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-award-4.png.webp",
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-award-3.png.webp",
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-award-5.png.webp",
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-award-2.png.webp",
+    "https://cocotastudio.com/wp-content/uploads/2024/06/cocota-brand_design-web_design-Awwwards.png.webp",
+  ];
+
+  function createTrailImage(x, y, imageUrl) {
+    const img = document.createElement("img");
+    img.src = imageUrl;
+    img.className = "trail-image";
+    img.style.left = `${x}px`;
+    img.style.top = `${y}px`;
+
+    trailContainer.appendChild(img);
+
+    setTimeout(() => {
+      img.style.opacity = 0;
+      setTimeout(() => img.remove(), 1000);
+    }, 500);
+  }
+
+  function handleMouseMove(e) {
+    const { clientX: x, clientY: y } = e;
+
+    images.forEach((imageUrl, index) => {
+      setTimeout(() => {
+        createTrailImage(x + index * 10, y + index * 10, imageUrl);
+      }, index * 100);
+    });
+  }
+
+  awwardsDiv.addEventListener("mouseenter", () => {
+    document.addEventListener("mousemove", handleMouseMove);
+  });
+
+  awwardsDiv.addEventListener("mouseleave", () => {
+    document.removeEventListener("mousemove", handleMouseMove);
+  });
+}
+awardsHoverAnimation();
