@@ -1384,13 +1384,22 @@ body {
 
       #left,
       #right {
-        width: 50%;
+        flex: 1;
         height: 100%;
         background-color: rgb(255, 255, 255);
         border-radius: 15px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
         color: #000;
+        padding-right: 2vw;
+
+        #text {
+          width: 100%;
+          padding: 1vw;
+          font-size: 1.4vw;
+          color: #fff;
+        }
 
         #top {
           width: 110%;
@@ -1425,8 +1434,20 @@ body {
         }
       }
 
-      #right {
-        width: 48%;
+      #right #top {
+        padding-right: 1vw;
+      }
+
+      #left:hover {
+        flex-grow: 1.4;
+        cursor: pointer;
+        background-color: #024934;
+      }
+
+      #right:hover {
+        flex-grow: 1.3;
+        cursor: pointer;
+        background-color: #024934;
       }
     }
   }
@@ -1479,4 +1500,8 @@ body {
       }
     }
   }
+}
+
+#footer#content#right#left:hover {
+  flex-grow: 1.3;
 }
