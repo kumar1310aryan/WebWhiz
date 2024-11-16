@@ -8,23 +8,44 @@
       href="./assets/faviconp.png"
       type="image/x-icon"
     />
+
+    <!-- locomotive css  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+
+    <!-- shery css  -->
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+
+    <!-- css file -->
     <link rel="stylesheet" href="style.css" />
     <title>Cocota creative agency | Brand & Design Studio</title>
   </head>
   <body>
-    <div id="main">
-      <div id="nav">
-        <h2>COCOTA®️ &nbsp; &nbsp; Brand & Design Studio</h2>
-        <div id="nav-links">
-          <a href="">Work</a>,&nbsp;<a href="">Services</a>,&nbsp;<a href=""
-            >About</a
-          >
+    <div id="loader">
+      <div id="circle">
+        <div id="rectangle">
+          <div class="eye left-eye"></div>
+          <div class="eye right-eye"></div>
         </div>
-        <div id="lets-talk">Let's talk!</div>
+        <div class="smile"></div>
       </div>
+    </div>
+
+    <div id="nav">
+      <h2>COCOTA®️ &nbsp; &nbsp; Brand & Design Studio</h2>
+      <div id="nav-links">
+        <a href="">Work</a>,&nbsp;<a href="">Services</a>,&nbsp;<a href=""
+          >About</a
+        >
+      </div>
+      <div id="lets-talk">Let's talk!</div>
+    </div>
+    <div id="main">
       <div id="page1">
         <div class="heading">
-          <h1>thoughtful</h1>
+          <h1 class="animated-heading">thoughtful</h1>
           <div id="man"></div>
           <div id="dot"></div>
           <div id="dot-content">
@@ -33,7 +54,7 @@
             name it!
           </div>
         </div>
-        <div class="heading"><h1>design for</h1></div>
+        <div class="heading"><h1 class="animated-heading">design for</h1></div>
         <div class="heading">
           <div id="man2"></div>
           <div id="dot2"></div>
@@ -43,9 +64,9 @@
             graphic experience is <br />
             the game.
           </div>
-          <h1>soulful</h1>
+          <h1 class="animated-heading">soulful</h1>
         </div>
-        <div class="heading"><h1>brands</h1></div>
+        <div class="heading"><h1 class="animated-heading">brands</h1></div>
       </div>
       <div id="page2">
         <div id="video">
@@ -512,6 +533,31 @@
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+    <!-- controlKit for debunging -->
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
 
     <script src="script.js"></script>
   </body>
