@@ -64,3 +64,21 @@ function awardsHoverAnimation() {
   });
 }
 awardsHoverAnimation();
+
+function newContentScroller() {
+  document
+    .querySelector("#page4-top #arrow #left")
+    .addEventListener("click", function () {
+      const newDiv = document.querySelector("#new");
+      newDiv.scrollLeft -= 369;
+    });
+
+  document
+    .querySelector("#page4-top #arrow #right")
+    .addEventListener("click", function () {
+      const newDiv = document.getElementById("new");
+      newDiv.scrollLeft += 366;
+    });
+}
+newContentScroller();
+
