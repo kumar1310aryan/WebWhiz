@@ -1393,12 +1393,14 @@ body {
         justify-content: space-between;
         color: #000;
         padding-right: 2vw;
+        transition: all 0.3s ease;
 
         #text {
           width: 100%;
           padding: 1vw;
           font-size: 1.4vw;
           color: #fff;
+          transition: all 0.3s ease;
         }
 
         #top {
@@ -1406,11 +1408,13 @@ body {
           height: 20%;
           display: flex;
           justify-content: space-between;
+          transition: all 0.3s ease;
 
           h2 {
             padding: 1vw;
             font-weight: 500;
             font-size: 2.5vw;
+            transition: all 0.3s ease;
           }
 
           #arrow {
@@ -1429,6 +1433,7 @@ body {
               font-size: 3vw;
               position: relative;
               top: -4.3vw;
+              transition: all 0.3s ease;
             }
           }
         }
@@ -1442,6 +1447,22 @@ body {
         flex-grow: 1.4;
         cursor: pointer;
         background-color: #024934;
+      }
+
+      #left:hover #top h2 {
+        color: #fff;
+      }
+
+      #left:hover #top h1 {
+        transform: rotate(45deg);
+      }
+
+      #right:hover #top h1 {
+        transform: rotate(45deg);
+      }
+
+      #right:hover #top h2 {
+        color: #fff;
       }
 
       #right:hover {
@@ -1500,8 +1521,4 @@ body {
       }
     }
   }
-}
-
-#footer#content#right#left:hover {
-  flex-grow: 1.3;
 }
