@@ -219,7 +219,7 @@ function loaderAnimation() {
     });
   }
 }
-// loaderAnimation();
+loaderAnimation();
 
 function page2Video() {
   gsap.to("#video", {
@@ -237,7 +237,6 @@ function page2Video() {
     borderRadius: "0",
   });
 }
-page2Video();
 
 function page3Animation() {
   gsap.from("#page3 h3", {
@@ -621,4 +620,14 @@ function sheryAnimation() {
     videos: ["./assets/1.mp4", "./assets/2.mp4"],
   });
 }
-sheryAnimation();
+
+function checkWidthAndAnimate() {
+  if (window.innerWidth > 500) {
+    sheryAnimation();
+    page2Video();
+  }
+}
+
+checkWidthAndAnimate();
+
+
