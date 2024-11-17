@@ -1,0 +1,416 @@
+@media (max-width: 500px) {
+  #loader {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    color: #fff;
+  }
+
+  #circle {
+    width: 25vw;
+    height: 25vw;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+  }
+
+  #rectangle {
+    height: 4vw;
+    width: 8.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 25%;
+  }
+
+  .eye {
+    width: 3.5vw;
+    height: 5vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+  }
+
+  .smile {
+    width: 9vw;
+    height: 4.4vw;
+    border: 4px solid rgb(255, 255, 255);
+    border-bottom-left-radius: 8vw;
+    border-bottom-right-radius: 8vw;
+    border-top: none;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #nav {
+    height: 8vw;
+    #nav-links {
+      display: none;
+    }
+
+    #lets-talk {
+      font-size: 3vw;
+    }
+
+    h2 {
+      font-size: 3vw;
+    }
+  }
+
+  #page1 {
+    height: 50vh;
+    margin-top: 30vw;
+
+    .heading {
+      height: 8vh;
+    }
+
+    .heading h1 {
+      font-size: 11vw;
+    }
+
+    #man {
+      top: 2vw;
+    }
+
+    #dot {
+      height: 1.5vw;
+      width: 1.5vw;
+      left: -2vw;
+    }
+
+    #dot2 {
+      height: 1.5vw;
+      width: 1.5vw;
+      left: -2vw;
+      top: -3vw;
+    }
+
+    #dot-content2 {
+      font-size: 1.6vw;
+      height: fit-content;
+      width: fit-content;
+      border-radius: 2px;
+      position: relative;
+      top: -8vw;
+      left: -18vw;
+    }
+
+    #dot-content {
+      display: none;
+    }
+  }
+
+  #page2 {
+    height: 35vh;
+    margin-bottom: 10vh;
+    #video {
+      border-radius: 10px;
+    }
+  }
+
+  #page3 {
+    margin-top: 5vh;
+    min-height: 115vh;
+    hr {
+      height: 0.1vw;
+      background-color: rgba(0, 0, 0, 0.641);
+    }
+    h3 {
+      font-size: 3vw;
+    }
+    h1 {
+      font-size: 6.7vw;
+      margin-top: 5vh;
+    }
+    #branding-design {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 46vh;
+      gap: 2vh;
+
+      #branding,
+      #design {
+        width: 90%;
+        border-radius: 6px;
+      }
+
+      #branding {
+        .branding-top {
+          h1 {
+            font-size: 7vw;
+          }
+        }
+        #branding-bottom {
+          opacity: 1;
+          font-size: 3vw;
+        }
+      }
+      #design {
+        .design-top {
+          h1 {
+            font-size: 7vw;
+          }
+        }
+        #design-bottom {
+          opacity: 1;
+          font-size: 3vw;
+        }
+      }
+    }
+    #discover {
+      #discover-right {
+        #text {
+          width: 90%;
+          font-size: 3vw;
+        }
+        #discover-work {
+          font-size: 2.1vw;
+          height: 2.2vw;
+        }
+      }
+    }
+  }
+
+  #dot3 {
+    height: 1.5vw;
+    width: 1.5vw;
+    left: -2vw;
+  }
+
+  #dot-content3 {
+    height: fit-content;
+    width: fit-content;
+    border-radius: 2px;
+    font-size: 2vw;
+    left: -20vw;
+  }
+
+  #page4 {
+    height: 50vh;
+    hr {
+      height: 0.1vw;
+      background-color: rgba(0, 0, 0, 0.641);
+    }
+
+    #page4-top {
+      font-size: 2.8vw;
+    }
+
+    #new {
+      margin-top: 3vh;
+      margin-bottom: 12vh;
+      width: 100%;
+      height: 20vw;
+      .new-in {
+        width: 40%;
+
+        .image {
+          width: 50%;
+        }
+
+        .img-right {
+          padding-left: 2vw;
+          width: 48%;
+
+          .head {
+            padding: 5px 5px;
+            font-size: 2vw;
+          }
+
+          .text {
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+  }
+
+  #page4-top #arrow #left:hover div {
+    cursor: pointer;
+    transform: translate(0, 0);
+  }
+
+  #page4-top #arrow #right:hover div {
+    cursor: pointer;
+    transform: translate(0, 0);
+  }
+
+  #page4 .heading {
+    font-size: 14vw;
+    height: 6vh;
+    margin-top: 1vh;
+  }
+
+  #dot4 {
+    height: 1.5vw;
+    width: 1.5vw;
+  }
+
+  #dot-content4 {
+    height: fit-content;
+    width: fit-content;
+    font-size: 2vw;
+    border-radius: 4px;
+    padding: 3px;
+    left: 21.5vw;
+  }
+
+  #page5 {
+    height: 150vh;
+    #images {
+      #row1,
+      #row2 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+
+        #left,
+        #right {
+          width: 90%;
+          height: 30vh;
+        }
+      }
+    }
+  }
+
+  #dot5 {
+    display: none;
+  }
+
+  #dot-content5 {
+    display: none;
+  }
+
+  #page6 {
+    height: 40vh;
+    #heading-bottom {
+      margin-top: -5vh;
+
+      h1 {
+        font-size: 4.5vw;
+      }
+    }
+
+    #categories {
+      width: 100%;
+      margin-top: 6vw;
+      display: flex;
+      gap: 1vw;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+
+      .category {
+        font-size: 3vw;
+        font-weight: 600;
+      }
+    }
+
+    #categories::-webkit-scrollbar {
+      display: none;
+    }
+
+    hr {
+      height: 0.1vw;
+      background-color: #302f2f;
+      margin-top: 1.5vw;
+    }
+  }
+
+  #page7 {
+    height: 60vh;
+  }
+
+  #page7-top {
+    font-size: 3vw;
+  }
+
+  #page7-top #arrow #left:hover div {
+    cursor: pointer;
+    transform: translate(0, 0);
+  }
+
+  #page7-top #arrow #right:hover div {
+    cursor: pointer;
+    transform: translate(0, 0);
+  }
+
+  #clients {
+    height: 50vh;
+    margin-top: -10vh;
+  }
+
+  #clients .client {
+    width: 40vw;
+    height: 50%;
+    flex-shrink: 0;
+    border-radius: 20px;
+  }
+
+  .client {
+    h2 {
+      text-transform: uppercase;
+      font-size: 2.2vw;
+      font-weight: 600;
+      margin-top: 4vw;
+    }
+
+    h3 {
+      color: rgb(96, 94, 94);
+      font-weight: 600;
+      font-size: 1.8vw;
+      margin-top: 2.5vw;
+    }
+
+    p {
+      font-size: 3.3vw;
+      width: 93%;
+      margin-top: 3vw;
+      color: #000000e9;
+    }
+  }
+
+  #page8 {
+  }
+
+  #awardss {
+    display: flex;
+    flex-direction: column;
+
+    #left {
+      margin-top: 3vh;
+      display: flex;
+      justify-content: center;
+      height: 10%;
+
+      h2 {
+        font-size: 3.9vw;
+      }
+    }
+
+    #right{
+        .award{
+            font-size: 3.2vw;
+            display: flex;
+            margin-top: 1vw;
+        }
+    }
+  }
+}

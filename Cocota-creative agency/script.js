@@ -215,7 +215,7 @@ function loaderAnimation() {
   } else {
     tl.to(".right-eye", {
       delay: 0.2,
-      height: "6vw",
+      height: "5vw",
     });
   }
 }
