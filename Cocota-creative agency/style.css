@@ -1504,6 +1504,8 @@ body {
   background-color: #000;
   margin-top: 10vw;
 
+  z-index: -1;
+
   h1 {
     /* text-align: center; */
     color: #fff;
@@ -1708,4 +1710,13 @@ body {
   pointer-events: none;
   transform-origin: center;
   will-change: transform, opacity;
+}
+
+.category:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.client:hover {
+  cursor: pointer;
 }

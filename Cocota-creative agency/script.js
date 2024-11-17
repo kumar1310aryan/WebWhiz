@@ -253,7 +253,7 @@ function page3Animation() {
     ease: "power2.out",
   });
 
-  gsap.from("#page3 h1", {
+  gsap.from("#page3h1", {
     scrollTrigger: {
       trigger: "#page3",
       start: "top 20%",
@@ -591,3 +591,34 @@ function page9Animation() {
   });
 }
 page9Animation();
+
+function footerAnimation() {
+  gsap.from("#footerH1", {
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: -20,
+    duration: 1,
+    ease: "power2.out",
+  });
+}
+footerAnimation();
+
+function sheryAnimation() {
+  Shery.mouseFollower();
+  Shery.makeMagnet(".magnet");
+  Shery.hoverWithMediaCircle(".hover", {
+    videos: [
+      "./assets/7889ee6e.mp4",
+      "musotoku-tatto_brand_and_web_design-cocota.mp4",
+    ],
+  });
+
+  Shery.hoverWithMediaCircle(".hover2", {
+    videos: ["./assets/1.mp4", "./assets/2.mp4"],
+  });
+}
+sheryAnimation();
