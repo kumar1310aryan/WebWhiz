@@ -162,6 +162,7 @@ function headingP1Animation() {
       scale: 1,
       rotateX: 0,
       duration: 1.5,
+      delay: 4,
       ease: "expo.out",
       stagger: 0.2,
     }
@@ -218,4 +219,375 @@ function loaderAnimation() {
     });
   }
 }
-loaderAnimation();
+// loaderAnimation();
+
+function page2Video() {
+  gsap.to("#video", {
+    scrollTrigger: {
+      scroller: "#main",
+      trigger: "#page2",
+      start: "top top",
+      end: "+=200%",
+      scrub: true,
+      pin: true,
+      // markers: true,
+    },
+    width: "100%",
+    height: "100%",
+    borderRadius: "0",
+  });
+}
+page2Video();
+
+function page3Animation() {
+  gsap.from("#page3 h3", {
+    scrollTrigger: {
+      trigger: "#page3",
+      start: "top 25%",
+      scroller: "#main",
+      // markers: true,
+    },
+    y: 70,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from("#page3 h1", {
+    scrollTrigger: {
+      trigger: "#page3",
+      start: "top 20%",
+      scroller: "#main",
+      // markers:true,
+    },
+    y: 70,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
+    delay: 0.2,
+  });
+
+  gsap.from("#discover-left", {
+    scrollTrigger: {
+      trigger: "#discover",
+      start: "top 50%",
+      scroller: "#main",
+      // markers: true,
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.out",
+  });
+
+  gsap.from("#discover-right", {
+    scrollTrigger: {
+      trigger: "#discover",
+      start: "top 50%",
+      scroller: "#main",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    delay: 0.2,
+  });
+}
+page3Animation();
+
+function page4animation() {
+  gsap.from("#page4 hr", {
+    scrollTrigger: {
+      trigger: "#page4",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    scaleX: 0,
+    transformOrigin: "left center",
+    duration: 1.2,
+    ease: "power2.out",
+  });
+
+  gsap.from("#page4-top", {
+    scrollTrigger: {
+      trigger: "#page4-top",
+      start: "top 70%",
+      scroller: "#main",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power2.out",
+  });
+
+  // gsap.from("#arrow > div", {
+  //   scrollTrigger: {
+  //     trigger: "#arrow",
+  //     start: "top 70%",
+  //     scroller: "#main",
+  //   },
+  //   x: -30,
+  //   opacity: 0,
+  //   duration: 1.5,
+  //   stagger: 0.2,
+  //   ease: "power2.out",
+  // });
+
+  gsap.from(".new-in", {
+    scrollTrigger: {
+      trigger: "#new",
+      start: "top 70%",
+      scroller: "#main",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    stagger: 0.3,
+  });
+
+  gsap.from("#page4-heading .heading", {
+    scrollTrigger: {
+      trigger: "#page4-heading",
+      start: "top 70%",
+      scroller: "#main",
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    stagger: 0.4,
+  });
+
+  gsap.from("#man4, #dot4", {
+    scrollTrigger: {
+      trigger: "#page4-heading",
+      start: "top 60%",
+      scroller: "#main",
+    },
+    scale: 0,
+    opacity: 0,
+    duration: 1.2,
+    ease: "elastic.out(1, 0.5)",
+    stagger: 0.2,
+  });
+}
+page4animation();
+
+function page5animation() {
+  gsap.from("#row1 #left img, #row1 #right img", {
+    scrollTrigger: {
+      trigger: "#row1",
+      start: "top 70%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: "power2.out",
+    stagger: 0.3,
+  });
+
+  gsap.from("#row1 #foster img", {
+    scrollTrigger: {
+      trigger: "#row1 #foster",
+      start: "top 70%",
+      scroller: "#main",
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 1.2,
+    ease: "elastic.out(1, 0.5)",
+  });
+
+  gsap.from("#row2 #left img, #row2 #right img", {
+    scrollTrigger: {
+      trigger: "#row2",
+      start: "top 75%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: "power2.out",
+    stagger: 0.3,
+  });
+
+  gsap.from("#row2 #foster img", {
+    scrollTrigger: {
+      trigger: "#row2 #foster",
+      start: "top 65%",
+      scroller: "#main",
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 1.2,
+    ease: "elastic.out(1, 0.5)",
+  });
+}
+page5animation();
+
+function page6Animation() {
+  gsap.from("#page6-heading h1", {
+    scrollTrigger: {
+      trigger: "#page6-heading",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    stagger: 0.3,
+    ease: "power2.out",
+  });
+
+  gsap.from("#dot5, #dot-content5", {
+    scrollTrigger: {
+      trigger: "#page6-heading",
+      start: "top 70%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.from("#heading-bottom h1", {
+    scrollTrigger: {
+      trigger: "#heading-bottom",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    stagger: 0.2,
+    ease: "power2.out",
+  });
+
+  gsap.from(".category", {
+    scrollTrigger: {
+      trigger: "#categories",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    scale: 0.8,
+    duration: 1.5,
+    stagger: 0.1,
+    ease: "elastic.out(1, 0.5)",
+  });
+
+  gsap.from("#page6 hr", {
+    scrollTrigger: {
+      trigger: "#page6",
+      start: "top 90%",
+      scroller: "#main",
+    },
+    scaleX: 0,
+    opacity: 0,
+    transformOrigin: "left center",
+    duration: 1.2,
+    ease: "power2.out",
+  });
+}
+page6Animation();
+
+function page7Animation() {
+  gsap.from(".client", {
+    scrollTrigger: {
+      trigger: "#clients",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    stagger: 0.3,
+    ease: "power2.out",
+  });
+}
+page7Animation();
+
+function page8Animation() {
+  gsap.from("#awards h1", {
+    scrollTrigger: {
+      trigger: "#awards",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: -50,
+    duration: 1.2,
+    ease: "power2.out",
+  });
+
+  gsap.from("#awardss #left h2", {
+    scrollTrigger: {
+      trigger: "#awardss",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    x: -50,
+    duration: 1.2,
+    ease: "power2.out",
+  });
+
+  gsap.from("#awardss #right .award", {
+    scrollTrigger: {
+      trigger: "#awardss",
+      start: "top 85%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 1.2,
+    stagger: 0.2,
+    ease: "power2.out",
+  });
+
+  gsap.from("#more #about-us div", {
+    scrollTrigger: {
+      trigger: "#more",
+      start: "top 85%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    scale: 0.9,
+    duration: 1.2,
+    ease: "power2.out",
+  });
+}
+page8Animation();
+
+function page9Animation() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from("#left .left-inner", {
+    scrollTrigger: {
+      trigger: "#page9",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    x: -50,
+    duration: 1.2,
+    stagger: 0.3,
+    ease: "power2.out",
+  });
+
+  gsap.from("#right img", {
+    scrollTrigger: {
+      trigger: "#right",
+      start: "top 80%",
+      scroller: "#main",
+    },
+    opacity: 0,
+    scale: 0.9,
+    duration: 1.2,
+    ease: "power2.out",
+  });
+}
+page9Animation();

@@ -935,7 +935,7 @@ body {
           position: absolute;
           width: 70%;
           height: 70%;
-          background-color: green;
+          /* background-color: green; */
           z-index: 100;
           top: 15%;
           left: 15%;
@@ -987,7 +987,7 @@ body {
           position: absolute;
           width: 30%;
           height: 65%;
-          background-color: green;
+          /* background-color: green; */
           z-index: 100;
           top: 17.5%;
           left: 35%;
