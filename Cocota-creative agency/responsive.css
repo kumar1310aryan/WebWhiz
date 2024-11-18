@@ -388,6 +388,18 @@
   }
 
   #page8 {
+    height: 70vh;
+
+    #more {
+      height: 5vw;
+      margin-top: -10vh;
+      #about-us {
+        margin-top: 0;
+        font-size: 3vw;
+        width: fit-content;
+        height: 3.2vw;
+      }
+    }
   }
 
   #awardss {
@@ -405,12 +417,236 @@
       }
     }
 
-    #right{
-        .award{
-            font-size: 3.2vw;
-            display: flex;
-            margin-top: 1vw;
+    #right {
+      .award {
+        font-size: 3.2vw;
+        display: flex;
+        margin-top: 1vw;
+      }
+    }
+  }
+
+  #page9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2vh;
+    gap: 10px;
+
+    #left,
+    #right {
+      width: 100%;
+    }
+
+    #left {
+      height: 40%;
+      .left-inner {
+        h3 {
+          font-size: 3vw;
         }
+      }
+    }
+    #right {
+      border-radius: 10px;
+      height: 30%;
+    }
+  }
+
+  #footer {
+    height: 180vh;
+    h1 {
+      padding-left: 4vw;
+    }
+    #content {
+      display: flex;
+      flex-direction: column;
+      padding: 0 4vw;
+      height: 60vh;
+
+      #left {
+        width: 100%;
+        gap: 40px;
+
+        #company,
+        #services {
+          width: 50%;
+
+          display: flex;
+          flex-direction: column;
+          gap: 0.2vw;
+          border-top: 1px solid #fff;
+
+          h2 {
+            font-size: 4vw;
+            padding-bottom: 0.4vw;
+            margin-top: 1vw;
+            font-weight: 400;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+          }
+
+          h3 {
+            margin-top: 1vw;
+            font-size: 3vw;
+            font-weight: 500;
+            color: gray;
+          }
+        }
+      }
+      #right {
+        margin-top: 5vh;
+        padding-right: 2vw;
+        padding-left: 0.5vw;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-shrink: 0;
+
+        #left,
+        #right {
+          flex: 1;
+          width: 100%;
+          height: 25vh;
+          background-color: rgb(255, 255, 255);
+          border-radius: 4px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          color: #000;
+          padding-right: 2vw;
+          transition: all 0.3s ease;
+
+          #text {
+            width: 100%;
+            padding: 2vw;
+            font-size: 4vw;
+            color: #000000;
+            transition: all 0.3s ease;
+          }
+
+          #top {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+
+            h2 {
+              padding: 2vw;
+              font-weight: 500;
+              font-size: 6vw;
+              transition: all 0.3s ease;
+            }
+
+            #arrow {
+              height: 9vw;
+              width: 9vw;
+              background-color: #000;
+              border-radius: 50%;
+
+              color: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              h1 {
+                color: #fff;
+                font-size: 5vw;
+                position: relative;
+                left: -1vw;
+
+                transition: all 0.3s ease;
+              }
+            }
+          }
+        }
+
+        #left:hover #text {
+          color: #fff;
+        }
+        #right:hover #text {
+          color: #fff;
+        }
+        #right #top {
+          padding-right: 1vw;
+        }
+
+        #left:hover {
+          flex-grow: 1.4;
+          cursor: pointer;
+          background-color: #024934;
+        }
+
+        #left:hover #top h2 {
+          color: #fff;
+        }
+
+        #left:hover #top h1 {
+          transform: rotate(45deg);
+        }
+
+        #right:hover #top h1 {
+          transform: rotate(45deg);
+        }
+
+        #right:hover #top h2 {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  #footer {
+    #bottom {
+      width: 100%;
+      height: 30vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 2vw;
+      margin-top: 30vh;
+
+      .bottom-div {
+        width: 90%;
+        margin-top: 6vh;
+        border-top: 0.4px solid #ffffffe8;
+        color: #fff;
+
+        h3 {
+          margin-top: 3vh;
+          font-size: 4vw;
+          text-transform: uppercase;
+          font-weight: 500;
+        }
+        h4 {
+          font-weight: 400;
+          color: rgb(153, 150, 150);
+          margin-top: 0.5vw;
+          font-size: 3.5vw;
+          margin-top: 1vh;
+        }
+        h5 {
+          font-weight: 400;
+          color: rgb(153, 150, 150);
+          margin-top: 1vh;
+          font-size: 3vw;
+        }
+      }
+
+      #right {
+        margin-top: 4vh;
+        width: 200%;
+        height: 100%;
+        border-top: 0.5px solid #fff;
+        h4 {
+          font-weight: 400;
+          color: rgb(153, 150, 150);
+          margin-top: 1vw;
+          font-size: 3.3vw;
+        }
+      }
     }
   }
 }
