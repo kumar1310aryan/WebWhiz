@@ -4,6 +4,31 @@ function Featured() {
       <div className="w-full px-20 border-b-[1px] border-zinc-500 pb-20">
         <h1 className="text-6xl">Featured projects</h1>
       </div>
+      <div className="px-14">
+        <div className="cards w-full flex gap-6 mt-16">
+          <div className="card-container w-1/2 h-[80vh] relative">
+            <h1 className="absolute  z-[9] text-[4vw] font-bold tracking-tighter transform scale-y-200 left-full">
+              CARDBOARD SPACESHIP
+            </h1>
+            <div className="card w-full h-full bg-zinc-50 rounded-xl overflow-hidden">
+              <img
+                src="https://ochi.design/wp-content/uploads/2024/08/CS_Website_1-663x551.png"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="card-container w-1/2 h-[80vh]">
+            <div className="card w-full h-full bg-zinc-50 rounded-xl overflow-hidden">
+              <img
+                src="https://ochi.design/wp-content/uploads/2024/08/Frame-481692-1-663x551.png"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
