@@ -7,7 +7,7 @@ function Featured() {
       <div className="px-14">
         <div className="cards w-full flex gap-6 mt-16">
           <div className="card-container w-1/2 h-[80vh] relative">
-            <h1 className="text-[#cdea68] absolute w-full  z-[9] text-[4vw] font-bold tracking-tighter transform scale-y-200 right-full translate-x-[50%] top-1/2 -translate-y-[100%]">
+            <h1 className="text-[#cdea68] absolute w-full  z-[9] text-[4vw] font-bold tracking-tighter transform scale-y-200 right-full translate-x-[150%] top-1/2 -translate-y-[100%]">
               {"CARDBOARD SPACESHIP".split("").map((item, index) => (
                 <span key={index}>{item}</span>
               ))}
