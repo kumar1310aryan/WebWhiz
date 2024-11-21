@@ -1,6 +1,11 @@
 function About() {
   return (
-    <div className="w-full h-[170vh] bg-[#CDEA68] rounded-t-3xl text-black">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="-.2"
+      className="w-full h-[170vh] bg-[#CDEA68] rounded-t-3xl text-black"
+    >
       <h1 className="text-[3.5vw] font-sans pl-16 pt-24 tracking-tight leading-none">
         Ochi is a strategic presentation agency for forward- <br /> thinking
         businesses that need to <u>raise funds, sell</u>
@@ -39,7 +44,9 @@ function About() {
       </div>
       <hr className="mt-8 border-t border-zinc-500" />
       <div className="w-full flex h-[65vh] mt-8">
-        <div className="w-[50%] pl-12 text-[4vw] -mt-4  font-normal leading-none tracking-tighter text-zinc-800">Our approach:</div>
+        <div className="w-[50%] pl-12 text-[4vw] -mt-4  font-normal leading-none tracking-tighter text-zinc-800">
+          Our approach:
+        </div>
         <div className="w-[50%] h-[100%]  flex align-middle justify-center">
           <div className="image w-[90%] h-[100%]  rounded-2xl overflow-hidden">
             <img

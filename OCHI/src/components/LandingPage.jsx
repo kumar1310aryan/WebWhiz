@@ -3,7 +3,11 @@ import "./LandingPage.css";
 import { motion } from "framer-motion";
 function LandingPage() {
   return (
-    <div className="w-full h-screen bg-zinc-900 pt-1">
+    <div
+      data-scroll
+      data-scroll-speed="-.3"
+      className="w-full h-screen bg-zinc-900 pt-1"
+    >
       <div className="textstructure mt-48 px-20">
         {["we create", "eye opening", "presentations"].map((item, index) => {
           return (
