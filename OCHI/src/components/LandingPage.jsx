@@ -1,5 +1,6 @@
 import { FaArrowUp } from "react-icons/fa6";
 import "./LandingPage.css";
+import { motion } from "framer-motion";
 function LandingPage() {
   return (
     <div className="w-full h-screen bg-zinc-900 pt-1">
@@ -9,13 +10,16 @@ function LandingPage() {
             <div key={index} className="masker">
               <div className="w-fit flex items-center">
                 {index === 1 && (
-                  <div
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "8vw" }}
+                    transition={{ ease: [0.11, 0, 0.5, 0], duration: 1 }}
                     className="w-[8vw] h-[4.9vw] bg-red-50 mt-2 overflow-hidden rounded-md bg-cover bg-center"
                     style={{
                       backgroundImage:
                         "url(https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg)",
                     }}
-                  ></div>
+                  ></motion.div>
                 )}
                 <h1 className="uppercase text-[6.5vw] leading-[5.6vw] tracking-tighter font-semibold ">
                   {item}
