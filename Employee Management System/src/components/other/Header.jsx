@@ -1,11 +1,10 @@
 function Header() {
   return (
-    <div className="flex items-end justify-between">
-      <h1 className="text-[1.5vw] font-medium ">
-        Hello <br />{" "}
-        <span className="text-[1.8vw] font-semibold">Aryan 🙋‍♂️</span>
+    <div className="flex items-end justify-between mb-10">
+      <h1 className="text-xl font-light">
+        Hello <br /> <span className="text-2xl font-semibold">Aryan 🙋‍♂️</span>
       </h1>
-      <button className="bg-red-500 text-white pl-1 pr-1 rounded-sm">
+      <button className="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-600">
         Logout
       </button>
     </div>

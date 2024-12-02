@@ -1,23 +1,17 @@
 function TaskListNumber() {
   return (
-    <div className="flex mt-10 justify-between gap-5 screen">
-      <div className="p-10 rounded-xl w-[45%] bg-red-400">
-        <h2 className="text-2xl font-semibold">0</h2>
-        <h3 className="text-xl font-medium">New Task</h3>
-      </div>
-      <div className="p-10 rounded-xl w-[45%] bg-blue-400">
-        <h2 className="text-2xl font-semibold">0</h2>
-        <h3 className="text-xl font-medium">New Task</h3>
-      </div>
-      <div className="p-10 rounded-xl w-[45%] bg-green-400">
-        <h2 className="text-2xl font-semibold">0</h2>
-        <h3 className="text-xl font-medium">New Task</h3>
-      </div>
-      <div className="p-10 rounded-xl w-[45%] bg-yellow-400">
-        <h2 className="text-2xl font-semibold">0</h2>
-        <h3 className="text-xl font-medium">New Task</h3>
-      </div>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {["New Task", "In Progress", "Completed", "On Hold"].map((title, idx) => (
+        <div
+          key={idx}
+          className="p-6 rounded-lg bg-gray-800 text-white text-center"
+        >
+          <h2 className="text-3xl font-semibold">0</h2>
+          <h3 className="text-lg font-light mt-2">{title}</h3>
+        </div>
+      ))}
     </div>
   );
 }
+
 export default TaskListNumber;

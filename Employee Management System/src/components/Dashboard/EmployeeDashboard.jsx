@@ -4,7 +4,7 @@ import TaskList from "../TaskList/TaskList";
 
 function EmployeeDashboard() {
   return (
-    <div className="p-10 bg-[#1c1c1c] h-[120vh]">
+    <div className="p-10 bg-black text-white h-screen">
       <Header />
       <TaskListNumber />
       <TaskList />
