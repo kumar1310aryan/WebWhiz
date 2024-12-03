@@ -4,29 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>L U M I N E N C E</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./Assets/favicon-32x32.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="home">
-      <video autoplay muted loop id="bg-video">
-        <source src="./luminence.mp4" type="video/mp4" />
-      </video>
-      <div id="nav">
-        <h1>LUMINENCE</h1>
-        <div id="links">
-          <h3>Portfolio</h3>
-          <h3>Nature</h3>
-          <h3>Portraits</h3>
-          <h3>Events</h3>
-          <h3>Community</h3>
-          <h3>The Story</h3>
+    <div id="main">
+      <div id="home">
+        <div id="play"><img src="./play.svg" alt="" /></div>
+        <video autoplay muted loop id="bg-video">
+          <source src="./luminence.mp4" type="video/mp4" />
+        </video>
+        <div id="nav">
+          <h1>LUMINENCE</h1>
+          <div id="links">
+            <h3>Portfolio</h3>
+            <h3>Nature</h3>
+            <h3>Portraits</h3>
+            <h3>Events</h3>
+            <h3>Community</h3>
+            <h3>The Story</h3>
+          </div>
+          <div id="icons">
+            <div id="join-us">
+              Join Us &nbsp; <img src="arrow.svg" alt="" />
+            </div>
+            <img src="hamburger.svg" alt="" />
+          </div>
         </div>
-        <div id="icons">
-          <div id="join-us">Join Us &nbsp; <img src="arrow.svg" alt="" /></div>
-          <img src="hamburger.svg" alt="" />
-        </div>
+        <div id="homeMarquee"></div>
       </div>
     </div>
+
+    <!-- locomotive scroll  -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    <!-- gsap  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- scrollTrigger  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>

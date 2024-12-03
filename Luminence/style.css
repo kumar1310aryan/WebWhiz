@@ -11,11 +11,32 @@ body {
   background-color: #000;
 }
 
+#main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 #home {
   width: 100vw;
   height: 100vh;
-  /* background-color: #fff; */
   padding: 0.1px;
+  overflow: hidden;
+  position: relative;
+}
+
+#play {
+  scale: 0;
+  width: 4.5vw;
+  height: 4.5vw;
+  background-color: #a99f9f65;
+  position: absolute;
+  z-index: 20;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: scale 0.3s ease;
+  cursor: pointer;
 }
 
 #bg-video {
@@ -41,8 +62,8 @@ body {
 
   h1 {
     font-size: 1.9vw;
-    letter-spacing: 0.5vw;
-
+    letter-spacing: 0.7vw;
+    line-height: 1;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     font-weight: 400;
@@ -57,19 +78,107 @@ body {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     letter-spacing: 0.05vw;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 10px;
   }
+}
+
+#links h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 0;
+  height: 1px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+#links h3:hover::after {
+  width: 100%;
 }
 
 #icons {
   display: flex;
   gap: 2vw;
+}
 
-  #join-us {
-    border: 1px solid rgb(145, 134, 134);
-    display: flex;
-    align-items: center;
-    font-size: 1.2vw;
-    padding: 0.8vw 1vw;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+#join-us {
+  position: relative;
+  border: 1px solid rgb(145, 134, 134);
+  display: flex;
+  align-items: center;
+  font-size: 1.2vw;
+  padding: 0.8vw 1vw;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+#join-us:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#join-us::before,
+#join-us::after {
+  content: "";
+  position: absolute;
+  background: white; 
+}
+
+#join-us::before {
+  height: 1px;
+  width: 0;
+  top: 0;
+  left: 0;
+  animation: none;
+}
+
+#join-us::after {
+  width: 1px;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  animation: none;
+}
+
+#join-us:hover::before {
+  animation: snake-horizontal 1s linear forwards;
+}
+
+#join-us:hover::after {
+  animation: snake-vertical 1s linear forwards;
+}
+
+@keyframes snake-horizontal {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 100%;
+  }
+}
+
+@keyframes snake-vertical {
+  0% {
+    height: 0;
+    bottom: 0;
+  }
+  50% {
+    height: 100%;
+    bottom: 0;
+  }
+  100% {
+    height: 100%;
+    bottom: 100%;
   }
 }
