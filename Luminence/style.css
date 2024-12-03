@@ -124,6 +124,7 @@ body {
   transition: color 0.3s ease;
   text-transform: uppercase;
   background-color: #ffffff22;
+  /* margin-top: 2vw; */
 }
 
 #join-us:hover {
@@ -195,7 +196,6 @@ body {
 #homeMarquee {
   width: 100vw;
   height: 25vh;
-  /* background-color: #201a1a5b; */
   position: relative;
   margin-top: 50vh;
   overflow: hidden;
