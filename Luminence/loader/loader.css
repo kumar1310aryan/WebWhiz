@@ -48,6 +48,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: rotateClockwise 55s linear infinite;
+  overflow: hidden;
 
   .text {
     width: 100%;
@@ -65,9 +67,9 @@ body {
 
 #smallCircle {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
+  left: 38%;
+  /* transform: translate(0%, -200%); */
   width: 24vw;
   height: 24vw;
   /* background-color: rgba(32, 109, 110, 0.687); */
@@ -76,6 +78,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: rotateAntiClockwise 50s linear infinite;
 
   .text2 {
     width: 100%;
@@ -88,5 +91,23 @@ body {
     left: 50%;
     font-size: 1.5vw;
     transform-origin: 0 12vw;
+  }
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateAntiClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   }
 }
