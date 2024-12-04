@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Login from "./components/Auth/Login";
 // import { getLocalStorage } from "./utils/localStorage";
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
+import { AuthContext } from "./context/AuthProvider";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -15,6 +16,9 @@ function App() {
       alert("invalid credentials");
     }
   };
+
+  const data = useContext(AuthContext);
+  console.log(data);
 
   return (
     <>
