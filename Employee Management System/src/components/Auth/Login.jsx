@@ -1,12 +1,14 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-function Login() {
+function Login({ handleLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(email, password);
+
+    handleLogin(email, password);
 
     setEmail("");
     setPassword("");
@@ -80,10 +82,7 @@ function Login() {
         </form>
         <p className="mt-6 text-sm text-center text-gray-600">
           Don&apos;t have an account?{" "}
-          <a
-            href="#"
-            className="text-black hover:underline focus:outline-none"
-          >
+          <a href="#" className="text-black hover:underline focus:outline-none">
             Sign up here
           </a>
         </p>
@@ -91,5 +90,9 @@ function Login() {
     </div>
   );
 }
+
+Login.propTypes = {
+  handleLogin: PropTypes.node.isRequired,
+};
 
 export default Login;

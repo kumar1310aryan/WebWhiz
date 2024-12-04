@@ -4,7 +4,7 @@ import Header from "../other/Header";
 
 function AdminDashboard() {
   return (
-    <div className="h-screen w-full bg-black text-white p-10">
+    <div className="h-[120vh] w-full bg-black text-white p-10">
       <Header />
       <CreateTask />
       <AllTask />
