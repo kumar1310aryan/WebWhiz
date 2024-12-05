@@ -92,7 +92,7 @@ function Login({ handleLogin }) {
 }
 
 Login.propTypes = {
-  handleLogin: PropTypes.node.isRequired,
+  handleLogin: PropTypes.func.isRequired,
 };
 
 export default Login;

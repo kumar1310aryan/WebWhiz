@@ -7,18 +7,23 @@ import { AuthContext } from "./context/AuthProvider";
 
 function App() {
   const [user, setUser] = useState(null);
+  const authData = useContext(AuthContext);
+  console.log(authData);
+
   const handleLogin = (email, password) => {
     if (email == "admin@me.com" && password == "12345678") {
       setUser("admin");
-    } else if (email == "user@me.com" && password == "12345678") {
+    } else if (
+      authData &&
+      authData.employees.find(
+        (e) => email === e.email && password === e.password
+      )
+    ) {
       setUser("employee");
     } else {
       alert("invalid credentials");
     }
   };
-
-  const data = useContext(AuthContext);
-  console.log(data);
 
   return (
     <>
