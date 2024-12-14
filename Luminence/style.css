@@ -23,6 +23,7 @@ body {
   padding: 0.1px;
   overflow: hidden;
   position: relative;
+  z-index: 999999;
 }
 
 #play {
@@ -302,6 +303,10 @@ body {
   color: rgba(128, 128, 128, 0.891);
   margin-top: 9vw;
   margin-left: 11vw;
+}
+
+.magnet {
+  cursor: none;
 }
 
 #page1-bottom {
@@ -975,6 +980,7 @@ body {
       font-weight: 500;
       letter-spacing: -0.1vw;
       transition: all 0.3s ease;
+      z-index: 999999;
     }
     #left div:hover {
       cursor: pointer;
@@ -1007,6 +1013,7 @@ body {
       transition: all 0.3s ease;
       padding: 0 1.4vw;
       border-radius: 6px;
+      z-index: 999999;
     }
 
     #right button:hover {
