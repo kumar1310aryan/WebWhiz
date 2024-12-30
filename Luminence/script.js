@@ -1,13 +1,15 @@
-Shery.makeMagnet(".magnet", {
-  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-  duration: 1,
-});
+function sheryAnimation() {
+  Shery.makeMagnet(".magnet", {
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
 
-Shery.mouseFollower({
-  // skew: true,
-  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-  duration: 1,
-});
+  Shery.mouseFollower({
+    // skew: true,
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+}
 
 function homeCursorAnimation() {
   var home = document.getElementById("home");
@@ -49,4 +51,12 @@ function homeCursorAnimation() {
     });
   });
 }
-homeCursorAnimation();
+
+function checkWidthAndAnimate() {
+  if (window.innerWidth > 600) {
+    sheryAnimation();
+    homeCursorAnimation();
+  }
+}
+
+checkWidthAndAnimate();
