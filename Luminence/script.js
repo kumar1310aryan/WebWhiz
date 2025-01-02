@@ -52,11 +52,11 @@ function homeCursorAnimation() {
   });
 }
 
-function checkWidthAndAnimate() {
-  if (window.innerWidth > 600) {
-    sheryAnimation();
-    homeCursorAnimation();
-  }
-}
+// function checkWidthAndAnimate() {
+//   if (window.innerWidth > 600) {
+//     sheryAnimation();
+//     homeCursorAnimation();
+//   }
+// }
 
-checkWidthAndAnimate();
+// checkWidthAndAnimate();
