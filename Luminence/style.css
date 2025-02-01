@@ -17,6 +17,114 @@ body {
   color: #fff;
 }
 
+/* loader */
+
+
+#loader {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+
+  /* #outer-div {
+    height: 100vh;
+    width: 100vh;
+    background-image: url("./outer.svg");
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #inner-div {
+      height: 70vh;
+      width: 70vh;
+      background-image: url("./innerr.svg");
+      background-position: center;
+      object-fit: cover;
+    } 
+  }*/
+}
+
+#largeCircle {
+  position: relative;
+  width: 40vw;
+  height: 40vw;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateClockwise 55s linear infinite;
+  overflow: hidden;
+
+  .text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .text span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.7vw;
+    transform-origin: 0 20vw;
+  }
+}
+
+#smallCircle {
+  position: absolute;
+  
+  left: 38%;
+  /* transform: translate(0%, -200%); */
+  width: 24vw;
+  height: 24vw;
+  /* background-color: rgba(32, 109, 110, 0.687); */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateAntiClockwise 50s linear infinite;
+
+  .text2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .text2 span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.5vw;
+    transform-origin: 0 12vw;
+  }
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateAntiClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* main */
+
 #home {
   width: 100%;
   height: 100vh;
@@ -261,7 +369,7 @@ body {
 
 .page1 {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   padding: 1px;
   background-color: #000;
   color: #fff;

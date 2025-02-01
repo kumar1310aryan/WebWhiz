@@ -1,3 +1,19 @@
+const text = document.querySelector(".text p");
+text.innerHTML = text.innerHTML
+  .split("")
+  .map(
+    (char, i) => `<span style="transform:rotate(${i * 3.5}deg)">${char}</span>`
+  )
+  .join("");
+
+const text2 = document.querySelector(".text2 p");
+text2.innerHTML = text2.innerHTML
+  .split("")
+  .map(
+    (char, i) => `<span style="transform:rotate(${i * 5}deg)">${char}</span>`
+  )
+  .join("");
+
 function sheryAnimation() {
   Shery.makeMagnet(".magnet", {
     ease: "cubic-bezier(0.23, 1, 0.320, 1)",
@@ -51,6 +67,23 @@ function homeCursorAnimation() {
     });
   });
 }
+
+function loaderAnimation() {
+  window.addEventListener("load", () => {
+    gsap
+      .timeline()
+      .to("#loader", { opacity: 0, duration: 0.2, ease: "power2.out", delay: 1 })
+      .to("#loader", { display: "none" })
+      .to("#main", { display: "block" })
+      .from("#home", {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.7,
+        ease: "power2.out",
+      });
+  });
+}
+loaderAnimation();
 
 function checkWidthAndAnimate() {
   if (window.innerWidth > 600) {
